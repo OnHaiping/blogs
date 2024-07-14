@@ -5,6 +5,6 @@
     "GMEEK_VERSION":"last",
     "email":"a15066577233@gmail.com",
     "onePageListNum":15,
-    "script":"<script async src='//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script>",
+    "script":"<script async src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=default'></script>",
     "bottomText":"转载请注明出处"
 }
