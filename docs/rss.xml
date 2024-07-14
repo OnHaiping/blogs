@@ -1,5 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Haiping Blogs</title><link>https://OnHaiping.github.io/blogs</link><description>把酒祝东风，且共从容。</description><copyright>Haiping Blogs</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://onhaiping.github.io/blogs/icon/%E4%B8%89%E6%AF%9B.jpg</url><title>avatar</title><link>https://OnHaiping.github.io/blogs</link></image><lastBuildDate>Sun, 14 Jul 2024 10:45:57 +0000</lastBuildDate><managingEditor>Haiping Blogs</managingEditor><ttl>60</ttl><webMaster>Haiping Blogs</webMaster><item><title>FastAPI学习</title><link>https://OnHaiping.github.io/blogs/post/FastAPI-xue-xi.html</link><description>## FastAPI介绍&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Haiping Blogs</title><link>https://OnHaiping.github.io/blogs</link><description>把酒祝东风，且共从容。</description><copyright>Haiping Blogs</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://onhaiping.github.io/blogs/icon/%E4%B8%89%E6%AF%9B.jpg</url><title>avatar</title><link>https://OnHaiping.github.io/blogs</link></image><lastBuildDate>Sun, 14 Jul 2024 10:51:50 +0000</lastBuildDate><managingEditor>Haiping Blogs</managingEditor><ttl>60</ttl><webMaster>Haiping Blogs</webMaster><item><title>初识three.js</title><link>https://OnHaiping.github.io/blogs/post/chu-shi-three.js.html</link><description># Three.js&#13;
+&#13;
+心血来潮，打算学three.js&#13;
+&#13;
+相比较于看视频学习来说，通过看文档的方式来的会更直接一些&#13;
+&#13;
+## 初步安装&#13;
+&#13;
+使用npm的方式来安装似乎会快点&#13;
+&#13;
+1. 去安装[Node.js](https://nodejs.org/)&#13;
+&#13;
+   详细教程我在这里就不放了，教程有很多。</description><guid isPermaLink="true">https://OnHaiping.github.io/blogs/post/chu-shi-three.js.html</guid><pubDate>Sun, 14 Jul 2024 10:51:28 +0000</pubDate></item><item><title>FastAPI学习</title><link>https://OnHaiping.github.io/blogs/post/FastAPI-xue-xi.html</link><description>## FastAPI介绍&#13;
 FastAPI两部分组成：&#13;
 &#13;
 &gt;starlette负责web部分(Asyncio)&#13;

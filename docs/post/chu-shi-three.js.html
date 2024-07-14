@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <link rel="icon" href="https://onhaiping.github.io/blogs/icon/%E4%B8%89%E6%AF%9B.jpg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# Three.js
+
+心血来潮，打算学three.js
+
+相比较于看视频学习来说，通过看文档的方式来的会更直接一些
+
+## 初步安装
+
+使用npm的方式来安装似乎会快点
+
+1. 去安装[Node.js](https://nodejs.org/)
+
+   详细教程我在这里就不放了，教程有很多。">
+<meta property="og:title" content="初识three.js">
+<meta property="og:description" content="# Three.js
+
+心血来潮，打算学three.js
+
+相比较于看视频学习来说，通过看文档的方式来的会更直接一些
+
+## 初步安装
+
+使用npm的方式来安装似乎会快点
+
+1. 去安装[Node.js](https://nodejs.org/)
+
+   详细教程我在这里就不放了，教程有很多。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://OnHaiping.github.io/blogs/post/chu-shi-three.js.html">
+<meta property="og:image" content="https://onhaiping.github.io/blogs/icon/%E4%B8%89%E6%AF%9B.jpg">
+<title>初识three.js</title>
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+</style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-important {border-left-color:var(--borderColor-done-emphasis, var(--color-done-emphasis));background-color:var(--color-done-subtle);}.markdown-alert.markdown-alert-important .markdown-alert-title {color: var(--fgColor-done,var(--color-done-fg));}</style>
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">初识three.js</h1>
+<div class="title-right">
+    <a href="https://OnHaiping.github.io/blogs" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/OnHaiping/blogs/issues/3" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>Three.js</h1>
+<p>心血来潮，打算学three.js</p>
+<p>相比较于看视频学习来说，通过看文档的方式来的会更直接一些</p>
+<h2>初步安装</h2>
+<p>使用npm的方式来安装似乎会快点</p>
+<ol>
+<li>
+<p>去安装<a href="https://nodejs.org/" rel="nofollow">Node.js</a></p>
+<p>详细教程我在这里就不放了，教程有很多。不过需要注意的是，记得配置好<strong>环境变量</strong></p>
+</li>
+<li>
+<p>在项目文件夹中通过 <a href="https://www.joshwcomeau.com/javascript/terminal-for-js-devs/" rel="nofollow">终端</a> 安装 three.js 和构建工具 <a href="https://vitejs.dev/" rel="nofollow">Vite</a>。Vite 将在开发过程中使用，但不会被打包成为最终网页的一部分。当然，除了 Vite 你也可以使用其他支持导入 <a href="https://eloquentjavascript.net/10_modules.html#h_zWTXAU93DC" rel="nofollow">ES Modules</a> 的现代构建工具。</p>
+</li>
+</ol>
+<blockquote>
+<p>详细步骤：</p>
+<ol>
+<li>
+<p>找到一个文件夹来存放你的Three.JS的项目文件，命名的话，我是起名为 Three.js</p>
+</li>
+<li>
+<p>打开之后在下面图片位置单击输入<code class="notranslate">cmd</code></p>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/996b8933b26aefd336ed0e75d4fddd6124088849ee5733ee2f2a2f926b0bed7f/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f34436e4e74787667495069537577652e706e67"><img src="https://camo.githubusercontent.com/996b8933b26aefd336ed0e75d4fddd6124088849ee5733ee2f2a2f926b0bed7f/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f34436e4e74787667495069537577652e706e67" alt="image-20240509102843064" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/4CnNtxvgIPiSuwe.png" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/847595929ed810b88c98fdb14e15ba11f7f25977da7780e68c7878a7d8d0ed01/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f765365377a52756132453635476a462e706e67"><img src="https://camo.githubusercontent.com/847595929ed810b88c98fdb14e15ba11f7f25977da7780e68c7878a7d8d0ed01/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f765365377a52756132453635476a462e706e67" alt="image-20240509103124151" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/vSe7zRua2E65GjF.png" style="max-width: 100%;"></a>
+<p>摁下回车键打开终端命令窗口</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/966e9217057fe948381da39717c9f1a69794f9deb32db1e1fde1f0374be13664/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f774a466878694d474142744e3948762e706e67"><img src="https://camo.githubusercontent.com/966e9217057fe948381da39717c9f1a69794f9deb32db1e1fde1f0374be13664/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f774a466878694d474142744e3948762e706e67" alt="image-20240509102951075" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/wJFhxiMGABtN9Hv.png" style="max-width: 100%;"></a></p>
+</li>
+<li>
+<p>在此处输入命令：<code class="notranslate">npm install --save three</code>以来安装 Three.js 的主文件</p>
+<p>如果成功的话，会看到下面这些信息：</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/f544f41721ae3d7f19f47cc99f53b757c654f3feb39c2ceb9a3dd6eaeebabc55/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f74566c364f3547416a4b31677173702e706e67"><img src="https://camo.githubusercontent.com/f544f41721ae3d7f19f47cc99f53b757c654f3feb39c2ceb9a3dd6eaeebabc55/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f74566c364f3547416a4b31677173702e706e67" alt="image-20240509102923521" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/tVl6O5GAjK1gqsp.png" style="max-width: 100%;"></a></p>
+</li>
+<li>
+<p>紧接着输入：<code class="notranslate">npm install --save-dev vite</code> 来安装vite，用来开发前端</p>
+<p>成功会看到下面这些信息：（可能在你操作的时候会有些许出入，但是主要没有报错就OK）</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/7c25da6f7325efabdfd6c25b387977f8a3785042699f328470931d2bc3f04ef2/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f59326a767a68314d666f4537505a482e706e67"><img src="https://camo.githubusercontent.com/7c25da6f7325efabdfd6c25b387977f8a3785042699f328470931d2bc3f04ef2/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f59326a767a68314d666f4537505a482e706e67" alt="image-20240509103300056" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/Y2jvzh1MfoE7PZH.png" style="max-width: 100%;"></a></p>
+</li>
+<li>
+<p>代码如下：</p>
+<pre class="notranslate"><code class="notranslate"># three.js
+npm install --save three
+# vite
+npm install --save-dev vite
+
+</code></pre>
+</li>
+<li>
+<p>安装完成之后会发现刚刚新建的文件夹中新增了几个文件：</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/13428666729959c9989f14c77b8baa8c21b45b8e6c7d43b31cfc65dc16781542/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f4b594757646e53426b37554a7241652e706e67"><img src="https://camo.githubusercontent.com/13428666729959c9989f14c77b8baa8c21b45b8e6c7d43b31cfc65dc16781542/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f4b594757646e53426b37554a7241652e706e67" alt="image-20240509103558291" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/KYGWdnSBk7UJrAe.png" style="max-width: 100%;"></a></p>
+<blockquote>
+<p>[!important]</p>
+<p>npm 使用 <em>package.json</em> 来描述你已经安装的每个依赖项的版本。如果有其他人和你一起开发项目，他们只需运行 <em>npm install</em> 就能安装每个依赖项的原始版本。如果你在使用版本控制器（如：Git、SVN）来控制代码版本，那么 <em>package.json</em> 应当被提交。</p>
+<hr>
+<p>npm 将每个依赖项的代码放在 <em>node_modules/</em> 下的文件夹中。当Vite构建应用程序时，它会看到 “three” 的导入，并自动从该文件夹中提取 three.js 文件。 <em>node_modules/</em> 文件夹仅在开发过程中使用，不应上传到你的网络托管提供商或提交到版本历史记录中。</p>
+</blockquote>
+</li>
+<li>
+<p>好了，基本的构建已经完成了，接下来就要开始运行了：</p>
+<p>不用关闭终端窗口，直接输入：<code class="notranslate">npx vite</code> 启动我们的项目</p>
+<p>成功的话会看到下面这个窗口</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/025b6283e32c41691a8996d3fb9063aa4a31154c2e5be7c1707c5e731224e21a/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f6e65673143775558526f3868596b442e706e67"><img src="https://camo.githubusercontent.com/025b6283e32c41691a8996d3fb9063aa4a31154c2e5be7c1707c5e731224e21a/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f6e65673143775558526f3868596b442e706e67" alt="image-20240509103843977" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/neg1CwUXRo8hYkD.png" style="max-width: 100%;"></a></p>
+<p>可能会注意到，上面有一条黄色的警告，这个其实是因为我们的项目中没有任何的html文件来被执行，所以会导致警告，接下来我们就来开始我们的第一个html文件--<strong>绘制一个旋转立方体</strong></p>
+</li>
+<li>
+<p>摁住键盘上的<code class="notranslate">Ctrl</code>+<code class="notranslate">c</code>，鼠标单击 <code class="notranslate">Local</code>所指向的<strong>URL</strong></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/21cb19ed1e13293ec99f0b47dedd45e319fcac467af93c032f55aea103c8329f/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f435a6e39384a4456593762796f67462e706e67"><img src="https://camo.githubusercontent.com/21cb19ed1e13293ec99f0b47dedd45e319fcac467af93c032f55aea103c8329f/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f435a6e39384a4456593762796f67462e706e67" alt="image-20240509104212232" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/CZn98JDVY7byogF.png" style="max-width: 100%;"></a></p>
+<p>不出意外的话，会打开你的浏览器，并进入一个页面</p>
+<p>不过这个页面上什么也没有，甚至可能是下面这种情况：</p>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c36a8720bb0dea6660870ee625d98c73ca33e9fbefafea685aff7d7480063644/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f76506e41643261445868546f4a53652e706e67"><img src="https://camo.githubusercontent.com/c36a8720bb0dea6660870ee625d98c73ca33e9fbefafea685aff7d7480063644/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f76506e41643261445868546f4a53652e706e67" alt="image-20240509104312052" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/vPnAd2aDXhToJSe.png" style="max-width: 100%;"></a>
+<p>不用紧张，这个还是之前的哪个警告的原因--我们没有任何的html文件来被执行</p>
+</li>
+</ol>
+<p>至此，安装步骤到此结束</p>
+</blockquote>
+<p>接下来，我们来开始我们的第一个Three.js的项目：<strong>绘制一个旋转立方体</strong></p>
+<h2>绘制旋转立方体</h2>
+<h3>html文件</h3>
+<p>通常来说，在开发前端项目时候，一般使用VsCode编辑器。</p>
+<p>当然，无论你使用什么编辑器都是无所谓的，因为核心是一样的，<del>哪怕是使用记事本</del></p>
+<p>下面以VsCode编辑器为例子</p>
+<ol>
+<li>
+<p>找到我们的项目文件夹</p>
+</li>
+<li>
+<p>鼠标右键菜单中选择使用VsCode打开（我这里是Insider版本，本质是一样的）</p>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/82e3aacd80efef7ce602d6248c3439322766fb8787488fcd0f9c2053ca732684/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f696d6167652d32303234303530393130343935333335332e706e67"><img src="https://camo.githubusercontent.com/82e3aacd80efef7ce602d6248c3439322766fb8787488fcd0f9c2053ca732684/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f696d6167652d32303234303530393130343935333335332e706e67" alt="image-20240509104953353" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/image-20240509104953353.png" style="max-width: 100%;"></a>
+</li>
+<li>
+<p>选择信任作者</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/d1ee7fdf6ced3a4bc18d5284ecd8df4cc0e8f313ed141b648a9df98592a2ec0e/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f696d6167652d32303234303530393130353133383335392e706e67"><img src="https://camo.githubusercontent.com/d1ee7fdf6ced3a4bc18d5284ecd8df4cc0e8f313ed141b648a9df98592a2ec0e/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f696d6167652d32303234303530393130353133383335392e706e67" alt="image-20240509105138359" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/image-20240509105138359.png" style="max-width: 100%;"></a></p>
+</li>
+<li>
+<p>在根目录下新建一个文件</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/47247eb3f8afc4d03b3430a2c0eef8b5ad3270a2ef9fd301163564a8c8a42d62/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f696d6167652d32303234303530393130353234373334322e706e67"><img src="https://camo.githubusercontent.com/47247eb3f8afc4d03b3430a2c0eef8b5ad3270a2ef9fd301163564a8c8a42d62/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f696d6167652d32303234303530393130353234373334322e706e67" alt="image-20240509105247342" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/image-20240509105247342.png" style="max-width: 100%;"></a></p>
+<p>命名为<code class="notranslate">index.html</code></p>
+<p>然后，在这个文件中输入一个<code class="notranslate">!</code>，在摁回车，一般会直接生成一串代码，这个代码是自带HTML文件的初始化模板</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/8f93a7076c7f1d1b11838d7bd04f43081444c649dbb2544c5b2b5f36da083efe/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f696d6167652d32303234303530393130353434373531362e706e67"><img src="https://camo.githubusercontent.com/8f93a7076c7f1d1b11838d7bd04f43081444c649dbb2544c5b2b5f36da083efe/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f696d6167652d32303234303530393130353434373531362e706e67" alt="image-20240509105447516" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/image-20240509105447516.png" style="max-width: 100%;"></a></p>
+<p>使用模板的好处在于，一些通用的部分是可以快速生成以节约我们的时间</p>
+</li>
+<li>
+<p>接下来在<code class="notranslate">&lt;title&gt;&lt;/title&gt;</code>下面输入下面代码</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">style</span><span class="pl-kos">&gt;</span>
+	body { margin: 0; }
+<span class="pl-kos">&lt;/</span><span class="pl-ent">style</span><span class="pl-kos">&gt;</span></pre></div>
+<blockquote>
+<p>[!important]</p>
+<p>这段代码的含义是用于设置HTML文档的<code class="notranslate">&lt;body&gt;</code>元素的外边距为0，</p>
+<p>目的是消除浏览器默认的外边距，使页面内容能够填满整个浏览器窗口，而不会留下任何空白边距。</p>
+</blockquote>
+</li>
+<li>
+<p>接着在<code class="notranslate">&lt;body&gt;&lt;/body&gt;</code>中输入下面代码：</p>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">script</span> <span class="pl-c1">type</span>="<span class="pl-s">module</span>" <span class="pl-c1">src</span>="<span class="pl-s">/main.js</span>"<span class="pl-kos">&gt;</span><span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span></pre></div>
+<blockquote>
+<p>[!important]</p>
+<p>这个是引入js模块的语句，type属性代表加载的是一个JavaScript模块，并且默认使用严格模式</p>
+<p>src代表指向的js文件</p>
+<p>这个文件我们接下来会编写</p>
+</blockquote>
+<p>至此，我们的html文件就已经完成了</p>
+<p>Three.js的核心在于js文件</p>
+</li>
+</ol>
+<h3>Js文件</h3>
+<p>接下来就是重头戏了，我们新建一个<code class="notranslate">main.js</code>来存放我们的Three.js的代码。</p>
+<p>同样的道理，还是在项目文件夹的根目录下新建一个文件:<code class="notranslate">main.js</code></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/7f33382c37b4b13e0136e99ea2f1e1878161c03a14cee92f4210c450886f1819/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f696d6167652d32303234303530393131303535353738382e706e67"><img src="https://camo.githubusercontent.com/7f33382c37b4b13e0136e99ea2f1e1878161c03a14cee92f4210c450886f1819/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f696d6167652d32303234303530393131303535353738382e706e67" alt="image-20240509110555788" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/image-20240509110555788.png" style="max-width: 100%;"></a></p>
+<p>为了真正能够让你的场景借助 three.js 来进行显示，我们需要以下几个对象：场景（scene）、相机（camera）和渲染器（renderer），这样我们就能透过摄像机渲染出场景。</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">import</span> <span class="pl-c1">*</span> <span class="pl-k">as</span> <span class="pl-c1">THREE</span> <span class="pl-k">from</span> <span class="pl-s">'three'</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">scene</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-c1">THREE</span><span class="pl-kos">.</span><span class="pl-c1">Scene</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">camera</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-c1">THREE</span><span class="pl-kos">.</span><span class="pl-c1">PerspectiveCamera</span><span class="pl-kos">(</span> <span class="pl-c1">75</span><span class="pl-kos">,</span> <span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerWidth</span> <span class="pl-c1">/</span> <span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerHeight</span><span class="pl-kos">,</span> <span class="pl-c1">0.1</span><span class="pl-kos">,</span> <span class="pl-c1">1000</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">renderer</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-c1">THREE</span><span class="pl-kos">.</span><span class="pl-c1">WebGLRenderer</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">renderer</span><span class="pl-kos">.</span><span class="pl-en">setSize</span><span class="pl-kos">(</span> <span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerWidth</span><span class="pl-kos">,</span> <span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerHeight</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-c1">body</span><span class="pl-kos">.</span><span class="pl-en">appendChild</span><span class="pl-kos">(</span> <span class="pl-s1">renderer</span><span class="pl-kos">.</span><span class="pl-c1">domElement</span> <span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<p>很明显，这部分代码是需要进行解释的</p>
+<p>three.js 里有几种不同的相机，在这里，我们使用的是 <strong>PerspectiveCamera</strong>（透视摄像机）。</p>
+<p>第一个参数是<strong>视野角度（FOV）</strong>。视野角度就是无论在什么时候，你所能在显示器上看到的场景的范围，它的单位是角度(与弧度区分开)。</p>
+<p>第二个参数是<strong>长宽比（aspect ratio）</strong>。 也就是你用一个物体的宽除以它的高的值。比如说，当你在一个宽屏电视上播放老电影时，可以看到图像仿佛是被压扁的。</p>
+<p>接下来的两个参数是<strong>近截面</strong>（near）和<strong>远截面</strong>（far）。 当物体某些部分比摄像机的<strong>远截面</strong>远或者比<strong>近截面</strong>近的时候，该这些部分将不会被渲染到场景中。或许现在你不用担心这个值的影响，但未来为了获得更好的渲染性能，你将可以在你的应用程序里去设置它。</p>
+<p>接下来是渲染器。这里是施展魔法的地方。除了我们在这里用到的 WebGLRenderer 渲染器之外，Three.js 同时提供了其他几种渲染器，当用户所使用的浏览器过于老旧，或者由于其他原因不支持 WebGL 时，可以使用这几种渲染器进行降级。</p>
+<p>我们还需要在我们的应用程序里设置一个渲染器的尺寸。比如说，我们可以使用所需要的渲染区域的宽高，来让渲染器渲染出的场景填充满我们的应用程序。因此，我们可以将渲染器宽高设置为浏览器窗口宽高。对于性能比较敏感的应用程序来说，你可以使用 <strong>setSize</strong> 传入一个较小的值，例如 <strong>window.innerWidth/2</strong> 和 <strong>window.innerHeight/2</strong>，这将使得应用程序在渲染时，以一半的长宽尺寸渲染场景。</p>
+<p>如果你希望保持你的应用程序的尺寸，但是以较低的分辨率来渲染，你可以在调用 <strong>setSize</strong> 时，将 <strong>updateStyle</strong>（第三个参数）设为 false。例如，假设你的 <strong></strong> 标签现在已经具有了 100% 的宽和高，调用 <strong>setSize(window.innerWidth/2, window.innerHeight/2, false)</strong> 将使得你的应用程序以四分之一的大小来进行渲染。</p>
+<p>最后一步很重要，我们将 <strong>renderer</strong>（渲染器）的dom元素（renderer.domElement）添加到我们的 HTML 文档中。这就是渲染器用来显示场景给我们看的 <code class="notranslate">&lt;canvas&gt; </code>元素。</p>
+<p>当完成了上面这些步骤之后，我们接下来就需要添加立方体给我们的<strong>场景</strong>了</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">const</span> <span class="pl-s1">geometry</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-c1">THREE</span><span class="pl-kos">.</span><span class="pl-c1">BoxGeometry</span><span class="pl-kos">(</span> <span class="pl-c1">1</span><span class="pl-kos">,</span> <span class="pl-c1">1</span><span class="pl-kos">,</span> <span class="pl-c1">1</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">material</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-c1">THREE</span><span class="pl-kos">.</span><span class="pl-c1">MeshBasicMaterial</span><span class="pl-kos">(</span> <span class="pl-kos">{</span> <span class="pl-c1">color</span>: <span class="pl-c1">0x00ff00</span> <span class="pl-kos">}</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">cube</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-c1">THREE</span><span class="pl-kos">.</span><span class="pl-c1">Mesh</span><span class="pl-kos">(</span> <span class="pl-s1">geometry</span><span class="pl-kos">,</span> <span class="pl-s1">material</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">scene</span><span class="pl-kos">.</span><span class="pl-en">add</span><span class="pl-kos">(</span> <span class="pl-s1">cube</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">camera</span><span class="pl-kos">.</span><span class="pl-c1">position</span><span class="pl-kos">.</span><span class="pl-c1">z</span> <span class="pl-c1">=</span> <span class="pl-c1">5</span><span class="pl-kos">;</span></pre></div>
+<p>要创建一个立方体，我们需要一个 <strong>BoxGeometry</strong>（立方体）对象. 这个对象包含了一个立方体中所有的顶点（<strong>vertices</strong>）和面（<strong>faces</strong>）。未来我们将在这方面进行更多的探索。</p>
+<p>接下来，对于这个立方体，我们需要给它一个材质，来让它有颜色。Three.js 自带了几种材质，在这里我们使用的是 <strong>MeshBasicMaterial</strong>。所有的材质都存有应用于他们的属性的对象。在这里为了简单起见，我们只设置一个color属性，值为 <strong>0x00ff00</strong>，也就是绿色。这里所做的事情，和在 CSS 或者 Photoshop 中使用十六进制（<strong>hex colors</strong>）颜色格式来设置颜色的方式一致。</p>
+<p>第三步，我们需要一个 <strong>Mesh</strong>（网格）。 网格包含一个几何体以及作用在此几何体上的材质，我们可以直接将网格对象放入到我们的场景中，并让它在场景中自由移动。</p>
+<p>默认情况下，当我们调用 <strong>scene.add()</strong> 的时候，物体将会被添加到 <strong>(0,0,0)</strong> 坐标。但将使得摄像机和立方体彼此在一起。为了防止这种情况的发生，我们只需要将摄像机稍微向外移动一些即可。</p>
+<p>当完成上面这部分之后，我们只剩下了最后一个步骤，那就是来渲染我们的立方体：</p>
+<p>为此，我们需要一个被叫做<strong>渲染循环</strong>（render loop）或者<strong>动画循环</strong>（animate loop）的东西</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">function</span> <span class="pl-en">animate</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+	<span class="pl-en">requestAnimationFrame</span><span class="pl-kos">(</span> <span class="pl-s1">animate</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+	<span class="pl-s1">renderer</span><span class="pl-kos">.</span><span class="pl-en">render</span><span class="pl-kos">(</span> <span class="pl-s1">scene</span><span class="pl-kos">,</span> <span class="pl-s1">camera</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
+<span class="pl-en">animate</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<p>在这里我们创建了一个使渲染器能够在每次屏幕刷新时对场景进行绘制的循环（在大多数屏幕上，刷新率一般是60次/秒）。如果你是一个浏览器游戏开发的新手，你或许会说*“为什么我们不直接用 setInterval 来实现刷新的功能呢？”*当然啦，我们的确可以用 setInterval，但是，<strong>requestAnimationFrame</strong> 有很多的优点。最重要的一点或许就是当用户切换到其它的标签页时，它会暂停，因此不会浪费用户宝贵的处理器资源，也不会损耗电池的使用寿命。</p>
+<p>不过，还记得我们一开始的目标吗？</p>
+<p>我们要让立方体旋转起来：</p>
+<p>把下面这段代码添加到 <strong>animate()</strong> 函数中 <strong>renderer.render</strong> 调用的上方：</p>
+<pre class="notranslate"><code class="notranslate">cube.rotation.x += 0.01;
+cube.rotation.y += 0.01;
+</code></pre>
+<p>这段代码每帧都会执行（正常情况下是60次/秒），这就让立方体有了一个看起来很不错的旋转动画。基本上来说，当应用程序运行时，如果你想要移动或者改变任何场景中的东西，都必须要经过这个动画循环。当然，你可以在这个动画循环里调用别的函数，这样你就不会写出有上百行代码的 <strong>animate</strong> 函数。</p>
+<p>ok了。到此为止，整个旋转的立方体已经创建完成了</p>
+<blockquote>
+<p>详细代码：</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-k">import</span> <span class="pl-c1">*</span> <span class="pl-k">as</span> <span class="pl-c1">THREE</span> <span class="pl-k">from</span> <span class="pl-s">'three'</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">scene</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-c1">THREE</span><span class="pl-kos">.</span><span class="pl-c1">Scene</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">camera</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-c1">THREE</span><span class="pl-kos">.</span><span class="pl-c1">PerspectiveCamera</span><span class="pl-kos">(</span> <span class="pl-c1">75</span><span class="pl-kos">,</span> <span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerWidth</span> <span class="pl-c1">/</span> <span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerHeight</span><span class="pl-kos">,</span> <span class="pl-c1">0.1</span><span class="pl-kos">,</span> <span class="pl-c1">1000</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">renderer</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-c1">THREE</span><span class="pl-kos">.</span><span class="pl-c1">WebGLRenderer</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">renderer</span><span class="pl-kos">.</span><span class="pl-en">setSize</span><span class="pl-kos">(</span> <span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerWidth</span><span class="pl-kos">,</span> <span class="pl-smi">window</span><span class="pl-kos">.</span><span class="pl-c1">innerHeight</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-smi">document</span><span class="pl-kos">.</span><span class="pl-c1">body</span><span class="pl-kos">.</span><span class="pl-en">appendChild</span><span class="pl-kos">(</span> <span class="pl-s1">renderer</span><span class="pl-kos">.</span><span class="pl-c1">domElement</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-k">const</span> <span class="pl-s1">geometry</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-c1">THREE</span><span class="pl-kos">.</span><span class="pl-c1">BoxGeometry</span><span class="pl-kos">(</span> <span class="pl-c1">1</span><span class="pl-kos">,</span> <span class="pl-c1">1</span><span class="pl-kos">,</span> <span class="pl-c1">1</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">material</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-c1">THREE</span><span class="pl-kos">.</span><span class="pl-c1">MeshBasicMaterial</span><span class="pl-kos">(</span> <span class="pl-kos">{</span> <span class="pl-c1">color</span>: <span class="pl-c1">0x00ff00</span> <span class="pl-kos">}</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-k">const</span> <span class="pl-s1">cube</span> <span class="pl-c1">=</span> <span class="pl-k">new</span> <span class="pl-c1">THREE</span><span class="pl-kos">.</span><span class="pl-c1">Mesh</span><span class="pl-kos">(</span> <span class="pl-s1">geometry</span><span class="pl-kos">,</span> <span class="pl-s1">material</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-s1">scene</span><span class="pl-kos">.</span><span class="pl-en">add</span><span class="pl-kos">(</span> <span class="pl-s1">cube</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+<span class="pl-s1">camera</span><span class="pl-kos">.</span><span class="pl-c1">position</span><span class="pl-kos">.</span><span class="pl-c1">z</span> <span class="pl-c1">=</span> <span class="pl-c1">5</span><span class="pl-kos">;</span>
+
+<span class="pl-k">function</span> <span class="pl-en">animate</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+	<span class="pl-en">requestAnimationFrame</span><span class="pl-kos">(</span> <span class="pl-s1">animate</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+
+	<span class="pl-s1">cube</span><span class="pl-kos">.</span><span class="pl-c1">rotation</span><span class="pl-kos">.</span><span class="pl-c1">x</span> <span class="pl-c1">+=</span> <span class="pl-c1">0.01</span><span class="pl-kos">;</span>
+	<span class="pl-s1">cube</span><span class="pl-kos">.</span><span class="pl-c1">rotation</span><span class="pl-kos">.</span><span class="pl-c1">y</span> <span class="pl-c1">+=</span> <span class="pl-c1">0.01</span><span class="pl-kos">;</span>
+
+	<span class="pl-s1">renderer</span><span class="pl-kos">.</span><span class="pl-en">render</span><span class="pl-kos">(</span> <span class="pl-s1">scene</span><span class="pl-kos">,</span> <span class="pl-s1">camera</span> <span class="pl-kos">)</span><span class="pl-kos">;</span>
+<span class="pl-kos">}</span>
+
+<span class="pl-en">animate</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+</blockquote>
+<h2>看看效果</h2>
+<p>还记得之前我们在命令窗口启动之后产生的 <strong>URL</strong> 么？</p>
+<p>现在回到浏览器，代码会自动更新并且应用。</p>
+<p>如果你不小心关掉了，没关系，找到项目文件夹根目录</p>
+<p>在终端命令窗口输入</p>
+<pre class="notranslate"><code class="notranslate">npx vite
+</code></pre>
+<p>来再次启动我们的应用</p>
+<p>或者选择在VsCode中的终端中启动也是没有问题的</p>
+<p>这样我们就能看到如下结果：</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/7defda99ccc3be75c743b757310e5b2dd321d1e51a8562e2c6a1562a6d7a3e72/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f696d6167652d32303234303530393132343132373136312e706e67"><img src="https://camo.githubusercontent.com/7defda99ccc3be75c743b757310e5b2dd321d1e51a8562e2c6a1562a6d7a3e72/68747470733a2f2f706963747572652d7479706f72612e6f62732e636e2d6e6f7274682d342e6d79687561776569636c6f75642e636f6d2f696d616765732f696d6167652d32303234303530393132343132373136312e706e67" alt="image-20240509124127161" data-canonical-src="https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/image-20240509124127161.png" style="max-width: 100%;"></a></p>
+<p>也许不是想象中的那样完美，但至少我们成功了不是么？</p>
+<h1>矩阵变换</h1>
+<blockquote>
+<p>每个对象都有一个 <strong>矩阵</strong> 来保存该对象的位置、旋转和缩放因子</p>
+</blockquote>
+<h2>快捷属性和MatrixAutoUpdate</h2>
+<p>有两个方法来完成对象矩阵:</p>
+<p><strong>一 :</strong></p>
+<p>修改对象的<strong>位置(position)</strong>、<strong>四元数(quaternion)和缩放属性(scale)</strong>，然后交给Three.js来处理</p>
+<p>在缺省情况下，matrixAutoUpdate 属性被设置为 <strong>True</strong> ，这样矩阵将会被自动重新计算，如果对象是静止的，或者想要手动控制计算来获得更好的性能，可以将该属性设置为 <strong>False</strong></p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">object</span><span class="pl-kos">.</span><span class="pl-c1">matrixAutoUpdate</span> <span class="pl-c1">=</span> <span class="pl-c1">false</span><span class="pl-kos">;</span></pre></div>
+<p>在修改对象属性之后,要手动更新矩阵</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">object</span><span class="pl-kos">.</span><span class="pl-en">updateMatrix</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+<p><strong>二:</strong> 直接修改对象的矩阵.Matrix4类有多个方法来修改矩阵</p>
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-s1">object</span><span class="pl-kos">.</span><span class="pl-c1">matrix</span><span class="pl-kos">.</span><span class="pl-en">setRotationFromQuaternion</span><span class="pl-kos">(</span><span class="pl-s1">quaternion</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+		<span class="pl-s1">object</span><span class="pl-kos">.</span><span class="pl-c1">matrix</span><span class="pl-kos">.</span><span class="pl-en">setPosition</span><span class="pl-kos">(</span><span class="pl-s1">start_position</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+		<span class="pl-s1">object</span><span class="pl-kos">.</span><span class="pl-c1">matrixAutoUpdate</span> <span class="pl-c1">=</span> <span class="pl-c1">false</span><span class="pl-kos">;</span></pre></div>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p>
+<p>注意,在这种情况下,matrixAutoUpdate必须设置为 false , 并且应该要确保 <em>不去</em> 调用 updateMatrix 否则手动会被自动计算所覆盖</p>
+</div></div>
+<div style="font-size:small;margin-top:8px;float:right;">转载请注明出处</div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer">Copyright © <span id="year"></span><a href="https://OnHaiping.github.io/blogs"> Haiping Blogs </a>
+<p>
+<span id="runday"></span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a>
+</p>
+
+<script>
+if("07/14/2024"!=""){
+    var now=new Date();
+    var startSite=new Date("07/14/2024");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("year").innerHTML=now.getFullYear();
+    if(""!=""){document.getElementById("runday").innerHTML=" • "+"网站运行"+diffDay+"天"+" • ";}
+    else{document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";}
+}
+</script>
+</div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n\n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","OnHaiping/blogs");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+</script>
+<script async type='text/javascript' src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=default'></script>
+
+</html>
