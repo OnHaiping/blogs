@@ -1,6 +1,9 @@
 {
-    "title":"Blog Title",
-    "subTitle":"Blog description",
-    "avatarUrl":"https://github.githubassets.com/favicons/favicon.svg",
-    "GMEEK_VERSION":"last"
+    "title":"Haiping Blogs",
+    "subTitle":"把酒祝东风，且共从容。",
+    "avatarUrl":"https://onhaiping.github.io/blogs/icon/%E4%B8%89%E6%AF%9B.jpg",
+    "GMEEK_VERSION":"last",
+    "email":"a15066577233@gmail.com",
+    "onePageListNum":15,
+    "bottomText":"转载请注明出处"
 }
