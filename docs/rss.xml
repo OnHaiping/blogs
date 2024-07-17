@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Haiping Blogs</title><link>https://OnHaiping.github.io/blogs</link><description>把酒祝东风，且共从容。</description><copyright>Haiping Blogs</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://onhaiping.github.io/blogs/icon/%E4%B8%89%E6%AF%9B.jpg</url><title>avatar</title><link>https://OnHaiping.github.io/blogs</link></image><lastBuildDate>Sun, 14 Jul 2024 10:51:50 +0000</lastBuildDate><managingEditor>Haiping Blogs</managingEditor><ttl>60</ttl><webMaster>Haiping Blogs</webMaster><item><title>初识three.js</title><link>https://OnHaiping.github.io/blogs/post/chu-shi-three.js.html</link><description># Three.js&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Haiping Blogs</title><link>https://OnHaiping.github.io/blogs</link><description>把酒祝东风，且共从容。</description><copyright>Haiping Blogs</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://onhaiping.github.io/blogs/icon/%E4%B8%89%E6%AF%9B.jpg</url><title>avatar</title><link>https://OnHaiping.github.io/blogs</link></image><lastBuildDate>Wed, 17 Jul 2024 07:45:08 +0000</lastBuildDate><managingEditor>Haiping Blogs</managingEditor><ttl>60</ttl><webMaster>Haiping Blogs</webMaster><item><title>初始I2C</title><link>https://OnHaiping.github.io/blogs/post/chu-shi-I2C.html</link><description>## 初识I2C&#13;
+&#13;
+&lt;img src='https://picture-typora.obs.cn-north-4.myhuaweicloud.com/images/image-20240717090806935.png' alt='image-20240717090806935' style='zoom:30%;' /&gt;&#13;
+&#13;
+**SCL**是时钟线，**SDA**是数据线。</description><guid isPermaLink="true">https://OnHaiping.github.io/blogs/post/chu-shi-I2C.html</guid><pubDate>Wed, 17 Jul 2024 07:44:45 +0000</pubDate></item><item><title>初识three.js</title><link>https://OnHaiping.github.io/blogs/post/chu-shi-three.js.html</link><description># Three.js&#13;
 &#13;
 心血来潮，打算学three.js&#13;
 &#13;
