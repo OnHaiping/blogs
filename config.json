@@ -9,8 +9,7 @@
     "UTC":8,
     "startSite":"07/14/2024",
     "script":"<script async type='text/javascript' src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=default'></script>",
-    "script":"
-    <script async type='text/javascript'>
+    "script":"<script async='' type='text/javascript'>
     (function (name, factory) {
         if (typeof window === 'object') {
             window[name] = factory();
@@ -296,7 +295,6 @@
         return Factory;
     });
     new Ribbons();
-</script>
-    "
+</script>"
     "bottomText":"转载请注明出处"
 }
