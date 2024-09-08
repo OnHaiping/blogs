@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=4BkGYLNgxVfC&format=png&color=000000"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# Git版本控制
+
+## 初始化
+
+初始化设置用户名和邮箱
+
+```git
+git config --global user.name 'Your Name'
+git config --global user.emal 'email@mail.com'
+git config --global credential.helper store
+```
+
+查看当前配置
+
+```git
+git config --global --list
+```
+
+### 创建仓库
+
+创建一个新的本地仓库（省略project-name则在当前目录创建）
+
+```
+git init project-name
+```
+
+下载一个远程苍鹭
+
+```
+git clone <url>
+```
+
+### Git的四个区域
+
+- **工作区（**Working Directory**）**
+
+  就是你在电脑里能实际看到的目录。">
+<meta property="og:title" content="Git使用方法">
+<meta property="og:description" content="# Git版本控制
+
+## 初始化
+
+初始化设置用户名和邮箱
+
+```git
+git config --global user.name 'Your Name'
+git config --global user.emal 'email@mail.com'
+git config --global credential.helper store
+```
+
+查看当前配置
+
+```git
+git config --global --list
+```
+
+### 创建仓库
+
+创建一个新的本地仓库（省略project-name则在当前目录创建）
+
+```
+git init project-name
+```
+
+下载一个远程苍鹭
+
+```
+git clone <url>
+```
+
+### Git的四个区域
+
+- **工作区（**Working Directory**）**
+
+  就是你在电脑里能实际看到的目录。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://OnHaiping.github.io/blogs/post/Git-shi-yong-fang-fa.html">
+<meta property="og:image" content="https://onhaiping.github.io/blogs/icon/%E4%B8%89%E6%AF%9B.jpg">
+<title>Git使用方法</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">Git使用方法</h1>
+<div class="title-right">
+    <a href="https://OnHaiping.github.io/blogs" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/OnHaiping/blogs/issues/7" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>Git版本控制</h1>
+<h2>初始化</h2>
+<p>初始化设置用户名和邮箱</p>
+<pre lang="git" class="notranslate"><code class="notranslate">git config --global user.name "Your Name"
+git config --global user.emal "email@mail.com"
+git config --global credential.helper store
+</code></pre>
+<p>查看当前配置</p>
+<pre lang="git" class="notranslate"><code class="notranslate">git config --global --list
+</code></pre>
+<h3>创建仓库</h3>
+<p>创建一个新的本地仓库（省略project-name则在当前目录创建）</p>
+<pre class="notranslate"><code class="notranslate">git init project-name
+</code></pre>
+<p>下载一个远程苍鹭</p>
+<pre class="notranslate"><code class="notranslate">git clone &lt;url&gt;
+</code></pre>
+<h3>Git的四个区域</h3>
+<ul>
+<li>
+<p><strong>工作区（Working Directory）</strong></p>
+<p>就是你在电脑里能实际看到的目录。</p>
+</li>
+<li>
+<p><strong>暂存区（Stage/Index）</strong></p>
+<p>暂存区也叫索引， 用来临时存放未提交的内容， 一般在.git目录下的index中。</p>
+</li>
+<li>
+<p><strong>本地仓库（Repository）</strong></p>
+<p>Git在本地的版本库， 仓库信息存储在.git这个隐藏目录中。</p>
+</li>
+<li>
+<p><strong>远程仓库（Remote Repository）</strong></p>
+<p>托管在远程服务器上的仓库。 常用的有GitHub、 GitLab、 Gitee。</p>
+</li>
+</ul>
+<h3>Git的三种状态</h3>
+<ul>
+<li>
+<p><strong>已修改（Modified）</strong></p>
+<p>修改了但是没有保存到暂存区的文件。</p>
+</li>
+<li>
+<p><strong>已暂存（Staged）</strong></p>
+<p>修改后已经保存到暂存区的文件。</p>
+</li>
+<li>
+<p><strong>已提交（Committed）</strong></p>
+<p>把暂存区的文件提交到本地仓库后的状态</p>
+</li>
+</ul>
+<h3>文件状态</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>main/master</th>
+<th>默认主分支</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Origin</td>
+<td>默认远程仓库</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>指向当前分支的指针</td>
+</tr>
+<tr>
+<td>HEAD^</td>
+<td>上一个版本</td>
+</tr>
+<tr>
+<td>HEAD~</td>
+<td>上四个版本</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h3>特殊文件</h3>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>.git</th>
+<th>Git仓库的元数据和对象数据库</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.gitignore</td>
+<td>忽略文件，不需要提交到仓库与的文件</td>
+</tr>
+<tr>
+<td>.gitattributes</td>
+<td>指向当前分支的指针</td>
+</tr>
+<tr>
+<td>.gitkeep</td>
+<td>使空目录被提交到仓库</td>
+</tr>
+<tr>
+<td>.gitmodules</td>
+<td>记录子模块的信息</td>
+</tr>
+<tr>
+<td>.gitconfig</td>
+<td>记录仓库的配置信息</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>基本命令</h2>
+<h3>添加和提交</h3>
+<p>查看仓库状态</p>
+<pre class="notranslate"><code class="notranslate">git status
+</code></pre>
+<p>添加一个文件到暂存区</p>
+<pre class="notranslate"><code class="notranslate">git add &lt;file&gt;
+</code></pre>
+<ul>
+<li>可以使用通配符，例如：git add *.txt</li>
+<li>可以使用目录，例如：git add .</li>
+</ul>
+<p>添加所有文件到仓库</p>
+<pre class="notranslate"><code class="notranslate">git add .		
+</code></pre>
+<p>提交</p>
+<ul>
+<li>只提交 暂存区中的内容 不会提交工作区中的内容</li>
+</ul>
+<pre lang="git" class="notranslate"><code class="notranslate">git commit
+</code></pre>
+<ul>
+<li>提交所有暂存区的文件到仓库  -m 是指定提交的信息</li>
+</ul>
+<pre lang="git" class="notranslate"><code class="notranslate">git commit -m "message"
+</code></pre>
+<ul>
+<li>提交所有已修改的文件到仓库</li>
+</ul>
+<pre lang="git" class="notranslate"><code class="notranslate">git commit -am "message"
+</code></pre>
+<ul>
+<li>撤回提交的文件</li>
+</ul>
+<pre lang="git" class="notranslate"><code class="notranslate">git rm --cached &lt;file&gt;
+</code></pre>
+<p>查看提交日志</p>
+<pre lang="git" class="notranslate"><code class="notranslate">git log
+</code></pre>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/54456af0f94ed37d582c62ad71b8f9e2c95f829ba42bcef3fb8f3c98c859dea2/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130323230343630303436312e706e67"><img src="https://camo.githubusercontent.com/54456af0f94ed37d582c62ad71b8f9e2c95f829ba42bcef3fb8f3c98c859dea2/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130323230343630303436312e706e67" alt="image-20240102204600461" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240102204600461.png" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/165bc26ad0ed5ec7c912782cf9be8f941bb9f18d32528a34607b19ee9a1562ed/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130323230343634313331362e706e67"><img src="https://camo.githubusercontent.com/165bc26ad0ed5ec7c912782cf9be8f941bb9f18d32528a34607b19ee9a1562ed/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130323230343634313331362e706e67" alt="image-20240102204641316" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240102204641316.png" style="max-width: 100%;"></a></p>
+<p>误删了也不用怕</p>
+<p>找到版本号 重置就好</p>
+<pre class="notranslate"><code class="notranslate">git reflog 
+git reset --hard xxxxx
+</code></pre>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/fa9f0f965aed3800ff75d24a25f5141fd3a77d1159b7d523590f751cc8893b74/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130323231303635303730392e706e67"><img src="https://camo.githubusercontent.com/fa9f0f965aed3800ff75d24a25f5141fd3a77d1159b7d523590f751cc8893b74/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130323231303635303730392e706e67" alt="image-20240102210650709" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240102210650709.png" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/c184dec5a11f855d0b6c599111db4675b286d311e46315857b6e930721e9d6c9/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130323231303633323437362e706e67"><img src="https://camo.githubusercontent.com/c184dec5a11f855d0b6c599111db4675b286d311e46315857b6e930721e9d6c9/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130323231303633323437362e706e67" alt="image-20240102210632476" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240102210632476.png" style="max-width: 100%;"></a></p>
+<h3>查看状态和差异</h3>
+<ul>
+<li>查看仓库与状态，列出还未提交的新的或修改的文件。</li>
+</ul>
+<pre class="notranslate"><code class="notranslate">git status		
+</code></pre>
+<ul>
+<li>查看提交历史，--online 代表简介模式</li>
+</ul>
+<pre class="notranslate"><code class="notranslate">git log --online	
+</code></pre>
+<ul>
+<li>查看未暂存的文件更新了哪些部分</li>
+</ul>
+<pre class="notranslate"><code class="notranslate">git diff
+</code></pre>
+<ul>
+<li>查看两个提交之间的差异</li>
+</ul>
+<pre class="notranslate"><code class="notranslate">git diff &lt;commit-id&gt; &lt;commit-id&gt;
+</code></pre>
+<ul>
+<li>查看两个提交之间某一个文件的差异</li>
+</ul>
+<pre class="notranslate"><code class="notranslate">git diff &lt;commit-id&gt; &lt;commit-id&gt; filename
+</code></pre>
+<ul>
+<li>查看暂存区的内容</li>
+</ul>
+<pre class="notranslate"><code class="notranslate">git ls-files
+</code></pre>
+<h3>撤销和恢复</h3>
+<ul>
+<li>移动一个文件到新的位置</li>
+</ul>
+<pre class="notranslate"><code class="notranslate">git mv &lt;file&gt; &lt;new-file&gt;
+</code></pre>
+<p>从 工作区和暂存区删除一个文件，并且将这次删除放入暂存区</p>
+<pre class="notranslate"><code class="notranslate">git rm &lt;file&gt;
+</code></pre>
+<p>从索引 / 暂存区中删除文件，但是本地工作区文件还在，知识不希望这个文件被版本控制</p>
+<pre class="notranslate"><code class="notranslate">git rm --cached &lt;file&gt;
+</code></pre>
+<p>恢复一个文件到之前的版本</p>
+<pre class="notranslate"><code class="notranslate">git checkout &lt;file&gt; &lt;commit-id&gt;
+</code></pre>
+<p>创建一个新的提交，用来撤销指定的提交，后者的所有变化都将被前者抵消，并且应用到当前分支。</p>
+<pre class="notranslate"><code class="notranslate">git revert &lt;commid-id&gt;
+</code></pre>
+<p>重置当前分支的HEAD为之前的某个提交，并且删除所有之后的提交。</p>
+<p>--hard 参数表示重置工作区和暂存区</p>
+<p>--soft 参数表示重置暂存区</p>
+<p>--mixed 参数表示重置工作区</p>
+<pre class="notranslate"><code class="notranslate">git reset --hard &lt;commit-id&gt;
+git reset --mixed &lt;commit-id&gt;
+git reset --soft &lt;commit-id&gt;
+</code></pre>
+<p>撤销暂存区的文件，重新放回工作区( git add 的反向操作 )</p>
+<pre class="notranslate"><code class="notranslate">git restore --staged &lt;file&gt;
+</code></pre>
+<h3>.gitignore忽略文件</h3>
+<p>应该忽略哪些文件?</p>
+<ul>
+<li>系统或者软件自动生成的文件</li>
+<li>编译产生的中间文件和结果文件</li>
+<li>运行时生成日志文件、缓存文件、临时文件</li>
+<li>涉及身份、密码、口令、密钥等敏感信息文件</li>
+</ul>
+<blockquote>
+<p>提交到 .gitignore 不能是已经被添加到版本库中的文件</p>
+</blockquote>
+<h3>.gitignore文件的匹配规则</h3>
+<p>从上到下逐行匹配，每一行表示一个忽略模式。</p>
+<ul>
+<li>空行或者以 # 开头的行会被Git忽略。一行空行用于可读性的分隔，#一般用作注释</li>
+<li>使用标准的 Blob 模式匹配，例如：
+<ul>
+<li>星号 * 通配任意个字符</li>
+<li>问好 ？匹配单个字符</li>
+<li>中括号 [] 表示匹配列表中的单个字符，比如：[abc] 表示 a / b / c</li>
+</ul>
+</li>
+<li>两个星号 ** 表示匹配任意的中间目录</li>
+<li>中括号可以使用短中线连接，比如：
+<ul>
+<li>[0-9] 表示任意一位数字，[a-z] 表示任意一位小写字母</li>
+</ul>
+</li>
+<li>感叹号 ! 表示取反</li>
+</ul>
+<p>例子：</p>
+<pre class="notranslate"><code class="notranslate"># 忽略所有的 .a 文件
+*.a
+
+# 但跟踪所有的 lib.a，即便你在前面忽略了 .a 文件
+!lib.a
+
+# 只忽略当前目录下的 `TODO` 文件，而不忽略 subdir/TODO
+/TODO
+
+# 忽略任何目录下名为 build 的文件夹
+build/
+
+# 忽略 doc/notes.txt，但不忽略 dov/server/arch.txt
+doc/*.txt
+
+# 忽略 doc/ 目录及其所有子目录下的 .pdf 文件
+".gitifnore" 17L, 383B
+</code></pre>
+<h2>远程仓库</h2>
+<h3>创建远程仓库及初始化</h3>
+<p>gitHub仓库创建</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ff531196a504119430c533301d1ff77eb5e73c727a83c1d67a493b2fc7aaa603/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313034373438342e706e67"><img src="https://camo.githubusercontent.com/ff531196a504119430c533301d1ff77eb5e73c727a83c1d67a493b2fc7aaa603/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313034373438342e706e67" alt="image-20240104151047484" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240104151047484.png" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/73ae72be6a15cc268541f4691fec7c5cde95963badacc57abf4345a09e619b1e/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313131373233332e706e67"><img src="https://camo.githubusercontent.com/73ae72be6a15cc268541f4691fec7c5cde95963badacc57abf4345a09e619b1e/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313131373233332e706e67" alt="image-20240104151117233" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240104151117233.png" style="max-width: 100%;"></a></p>
+<p>ssh 克隆工程 需要配置 ssh 密钥</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/626d888325cfb706eeba05b63ea16e96dce6ce2bfe02385d6d8e4156bdff8c77/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313231333136362e706e67"><img src="https://camo.githubusercontent.com/626d888325cfb706eeba05b63ea16e96dce6ce2bfe02385d6d8e4156bdff8c77/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313231333136362e706e67" alt="image-20240104151213166" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240104151213166.png" style="max-width: 100%;"></a></p>
+<p>生成 SSH Key</p>
+<pre class="notranslate"><code class="notranslate">ssh-keygen -t rsa -b 4096
+</code></pre>
+<ul>
+<li>私钥文件：id_rsa</li>
+<li>公钥文件：id_rsa.pub</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/2703db9908fcb6c8ecbbdbcdb65552d32bdf7cb6c8a735df893d5d90338f3130/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135303835373732372e706e67"><img src="https://camo.githubusercontent.com/2703db9908fcb6c8ecbbdbcdb65552d32bdf7cb6c8a735df893d5d90338f3130/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135303835373732372e706e67" alt="image-20240104150857727" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240104150857727.png" style="max-width: 100%;"></a></p>
+<p>配置ssh密钥到 GitHub</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/e59956ce28cc2890b680e537a41a91625455725f15dabcdbf13ab1e29880ad04/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313332373134332e706e67"><img src="https://camo.githubusercontent.com/e59956ce28cc2890b680e537a41a91625455725f15dabcdbf13ab1e29880ad04/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313332373134332e706e67" alt="image-20240104151327143" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240104151327143.png" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/83ff8b43a58dbf0c20d4a9549935cc3ddd3ce50accbf30180fd1616b6f009c0e/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313334323235332e706e67"><img src="https://camo.githubusercontent.com/83ff8b43a58dbf0c20d4a9549935cc3ddd3ce50accbf30180fd1616b6f009c0e/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313334323235332e706e67" alt="image-20240104151342253" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240104151342253.png" style="max-width: 100%;"></a></p>
+<p>将生成的 id_rsa.pub 复制到 Key中</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/bf07fac0b8f923ca173ce16c4a66b090d73a3f96fefc207897da40d403ca050f/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313432303234312e706e67"><img src="https://camo.githubusercontent.com/bf07fac0b8f923ca173ce16c4a66b090d73a3f96fefc207897da40d403ca050f/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313432303234312e706e67" alt="image-20240104151420241" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240104151420241.png" style="max-width: 100%;"></a></p>
+<blockquote>
+<p>如果是之前配置过了，生成的时候 自己写一个文件的名字</p>
+<p>并且配置下面五行</p>
+</blockquote>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/8bdb5b596b0472e2a08c3b3cc112d7648455b52e045ce7be409dcd43ed95ec2e/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313632323737312e706e67"><img src="https://camo.githubusercontent.com/8bdb5b596b0472e2a08c3b3cc112d7648455b52e045ce7be409dcd43ed95ec2e/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135313632323737312e706e67" alt="image-20240104151622771" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240104151622771.png" style="max-width: 100%;"></a></p>
+<h3>基本命令</h3>
+<p>克隆仓库</p>
+<pre class="notranslate"><code class="notranslate">git clone repo-address
+</code></pre>
+<p>推送更新内容</p>
+<pre class="notranslate"><code class="notranslate">git push &lt;remote&gt; &lt;branch&gt;
+</code></pre>
+<p>拉取更新内容</p>
+<pre class="notranslate"><code class="notranslate">git pull &lt;remote&gt;
+</code></pre>
+<h4>关联远程仓库</h4>
+<pre class="notranslate"><code class="notranslate">git remote add &lt;远程仓库别名&gt; &lt;远程仓库地址&gt;
+git push -u &lt;远程仓库名&gt; &lt;分支名&gt;
+</code></pre>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/2ead42e38a349dc383f3047fc73161494cbde4710804e58f53125ee301a98441/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135333131313133382e706e67"><img src="https://camo.githubusercontent.com/2ead42e38a349dc383f3047fc73161494cbde4710804e58f53125ee301a98441/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135333131313133382e706e67" alt="image-20240104153111138" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240104153111138.png" style="max-width: 100%;"></a></p>
+<p>可以查看我们当前仓库所对应的远程仓库的别名和地址</p>
+<pre class="notranslate"><code class="notranslate">git remote -v 
+</code></pre>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/29ff38f3c33e8248c60607e8b2b7e8fdf6dea75a8a5b57b616f370bc553e0aa5/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135333133373732392e706e67"><img src="https://camo.githubusercontent.com/29ff38f3c33e8248c60607e8b2b7e8fdf6dea75a8a5b57b616f370bc553e0aa5/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135333133373732392e706e67" alt="image-20240104153137729" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240104153137729.png" style="max-width: 100%;"></a></p>
+<p>指定默认的分支名称为 main</p>
+<pre class="notranslate"><code class="notranslate">git branch -M main
+</code></pre>
+<p>把本地的 main 分支和远程的 origin 仓库与的 main 分支关联起来</p>
+<pre class="notranslate"><code class="notranslate">git push -u origin main
+</code></pre>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/1d468884cc185436c816019acbdb1d595af3ad32b31f40c5b01b9c131235e175/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135333135343831322e706e67"><img src="https://camo.githubusercontent.com/1d468884cc185436c816019acbdb1d595af3ad32b31f40c5b01b9c131235e175/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343135333135343831322e706e67" alt="image-20240104153154812" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240104153154812.png" style="max-width: 100%;"></a></p>
+<h4>拉取远程仓库内容</h4>
+<pre class="notranslate"><code class="notranslate">git pull &lt;远程仓库名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;
+</code></pre>
+<ul>
+<li>远程分支名 和 本地分支名 相同可省略冒号后面的内容、</li>
+</ul>
+<ul>
+<li>执行完 git pull 之后 Git 会自动为我们执行一次合并操作</li>
+</ul>
+<p>从远程仓库获取内容 还可以使用 fetch 命令</p>
+<p>区别：fetch 命令只是获取远程仓库的修改，不会自动合并</p>
+<h2>分支</h2>
+<p><strong>查看分支列表</strong></p>
+<pre class="notranslate"><code class="notranslate">git branch
+</code></pre>
+<p><strong>创建分支</strong></p>
+<pre class="notranslate"><code class="notranslate"> &lt;branch-name&gt;
+</code></pre>
+<p><strong>切换分支</strong></p>
+<pre class="notranslate"><code class="notranslate">git checkout &lt;branch-name&gt;
+git switch &lt;branch-name&gt;
+</code></pre>
+<p>gitcheck out 会有一些潜在的问题  默认是 切换分支</p>
+<ul>
+<li>切换分支</li>
+<li>恢复文件 -&gt; 恢复到修改之前的状态</li>
+</ul>
+<blockquote>
+<p>如果分支名称和文件名称相同就会出现歧义</p>
+</blockquote>
+<p>Git 2.23 版本之后有了新的 切换分支命令</p>
+<pre class="notranslate"><code class="notranslate">git switch &lt;branchname&gt;
+</code></pre>
+<p><strong>恢复分支</strong></p>
+<pre class="notranslate"><code class="notranslate">git checkout -b &lt;branch-name&gt; &lt;commit-id&gt;
+</code></pre>
+<p><strong>合并分支</strong></p>
+<p>将不同的分支合并到当前分支中</p>
+<p>merge 后面的分支名称是将要被合并的分支 而我们当前所在的分支就是合并后的目标分支</p>
+<p>如果要将 dev 分支 合并到 main 分支中，先将分支切换到 main 分支</p>
+<pre class="notranslate"><code class="notranslate">git merge &lt;branch&gt;
+</code></pre>
+<p><strong>合并冲突问题</strong></p>
+<p>两个分支未修改同一个文件的同一处位置：Git 自动合并</p>
+<p>两个分支修改了同一个文件的同一处位置：产生冲突</p>
+<p>解决方法：</p>
+<pre class="notranslate"><code class="notranslate">Step1- 手动修改冲突文件，合并冲突内容
+Step2- 添加暂存区 git add file
+Step3- 提交修改 git commit -m "message"
+</code></pre>
+<p>中止合并：当不想继续执行合并操作时可以使用下面的命令来中止合并过程</p>
+<pre class="notranslate"><code class="notranslate">git merge --abort
+</code></pre>
+<p><strong>查看分支图</strong></p>
+<pre class="notranslate"><code class="notranslate">git log --graph --oneline --decorate --all
+</code></pre>
+<p><strong>alias 别名</strong></p>
+<pre class="notranslate"><code class="notranslate">alias graph="git log --oneline --graph --decorate --all" // 直接使用别名 graph 查看图形化提交记录
+</code></pre>
+<p><strong>删除分支</strong></p>
+<ul>
+<li>-d 表示删除已经完成合并的分支</li>
+<li>-D 表示强制删除分支</li>
+</ul>
+<pre class="notranslate"><code class="notranslate">git branch -d &lt;branch-name&gt; 【已合并】
+</code></pre>
+<pre class="notranslate"><code class="notranslate">git branch -D &lt;branch-name&gt; 【未合并】
+</code></pre>
+<p><strong>变基（合并）</strong></p>
+<pre class="notranslate"><code class="notranslate">git rebase &lt;branch-name&gt;
+</code></pre>
+<p>可以在任一分支上 执行 rebase</p>
+<p>如果在 dev 分支上执行 rebase 操作，就找到 dev 分支和 main 分支共同的祖先，也就是 main3 这个提交记录，然后找到 main 上最新的提交记录 也就是 main5，从分叉点把整个分支都移动到目标分支的最新提交记录后面。</p>
+<p>如果在 main 分支上执行 rebase 操作，就找到 dev 分支和 main 分支共同的组件，也还是 main3 这个提交记录，然后 main 分支从共同祖先到最新提交记录的所有提交内容，也就是 main4 main5 ，都移动到 dev 分支的最新提交。</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/26818d0f538a2e7a8bba1e3339ac44a7fb8d95c1768b83db69d56c05ec26e788/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343139313434363435352e706e67"><img src="https://camo.githubusercontent.com/26818d0f538a2e7a8bba1e3339ac44a7fb8d95c1768b83db69d56c05ec26e788/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303130343139313434363435352e706e67" alt="image-20240104191446455" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240104191446455.png" style="max-width: 100%;"></a></p>
+<p>Rebase 和 Merge 有什么区别，该如何区分使用？</p>
+<p>Merge：</p>
+<ul>
+<li>优点：不会破坏原分支的提交历史，方便回溯和查看。</li>
+<li>缺点：会产生额外的提交节点，分支图比较复杂。</li>
+</ul>
+<p>Rebase:</p>
+<ul>
+<li>优点：不会新增额外的提交记录，形成线性历史，比较直观和干净</li>
+<li>缺点：会改变提交历史，改变了当前分支 branch out 的节点。避免在共享分支使用。</li>
+</ul>
+<p>Git 分支工作流模型</p>
+<ul>
+<li>GitFlow</li>
+<li>GitHubFlow</li>
+</ul></div>
+<div style="font-size:small;margin-top:8px;float:right;">转载请注明出处</div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://OnHaiping.github.io/blogs">与君游~</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("07/14/2024"!=""){
+    var startSite=new Date("07/14/2024");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","OnHaiping/blogs");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script async type='text/javascript' src='//cdn.mathjax.org/mathjax/latest/MathJax.js?config=default'></script>
+
+</html>
