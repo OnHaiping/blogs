@@ -16,7 +16,7 @@
 
 > 核心公式：
 > $$
-> \lim_{n\rightarrow +\infin} \frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n}) = \int^{1}_{0}f(x)dx
+> \lim_{n\rightarrow +\infty} \frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n}) = \int^{1}_{0}f(x)dx
 > $$
 > 需要理解的是，定积分所求的就是此函数曲线所对应的面积大小，只不过这里用极限的思想进行引申，相当于很多个非常小的四边形面积求和
 
@@ -28,7 +28,7 @@
 >
 > 推广：
 > $$
-> \lim_{n\rightarrow +\infin}\frac{b-a}{n}\sum_{k=1}^{n}f(a+\frac{k(b-a)}{n}) = \int^{b}_{a}f(x)dx
+> \lim_{n\rightarrow +\infty}\frac{b-a}{n}\sum_{k=1}^{n}f(a+\frac{k(b-a)}{n}) = \int^{b}_{a}f(x)dx
 > $$
 > 原理：
 >
@@ -42,15 +42,17 @@
 $$
 \lim_{n \rightarrow +\infin}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{n}{(n+i)(n^2+j^2)}
 $$
+
 求解：
+
 $$
-\lim_{n \rightarrow +\infin}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{n}{(n+i)(n^2+j^2)}\\
-原式=\lim_{n\rightarrow+\infin}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(n^2+j^2)}\\
+\lim_{n \rightarrow +\infty}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{n}{(n+i)(n^2+j^2)}\\
+原式=\lim_{n\rightarrow+\infty}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(n^2+j^2)}\\
 很明显后面哪个需要多乘一个n^2，所以需要在前面除一个n^2\\
 \begin{aligned}
-原式 &= \lim_{n\rightarrow+\infin} \frac{1}{n^2}\times \sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(\frac{n^2+j^2}{n^2})}\\
-&=\lim_{n\rightarrow+\infin}\frac{1}{n^2}\times \sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(1+(\frac{j}{n})^2)}\\
-&=\lim_{n\rightarrow+\infin}\frac{1}{n}\times \sum_{i=1}^{n}\frac{1}{1+\frac{i}{n}} \times \frac{1}{n} \times \sum_{j=1}^{n}\frac{1}{1+(\frac{j}{n})^2}\\
+原式 &= \lim_{n\rightarrow+\infty} \frac{1}{n^2}\times \sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(\frac{n^2+j^2}{n^2})}\\
+&=\lim_{n\rightarrow+\infty}\frac{1}{n^2}\times \sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(1+(\frac{j}{n})^2)}\\
+&=\lim_{n\rightarrow+\infty}\frac{1}{n}\times \sum_{i=1}^{n}\frac{1}{1+\frac{i}{n}} \times \frac{1}{n} \times \sum_{j=1}^{n}\frac{1}{1+(\frac{j}{n})^2}\\
 根据定理公式，得到&=\int^{1}_{0}\frac{1}{1+x} dx \times \int^{1}_{0} \frac{1}{1+x^2} dx\\
 进而进行积分得到结果&=\ln(1+x)|^{1}_{0} \times \arctan(x)|^{1}_{0}\\
 &=\frac{\pi}{4} \ln2
@@ -71,7 +73,7 @@ $$
 
 > 核心公式：
 > $$
-> \lim_{n\rightarrow +\infin} \frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n}) = \int^{1}_{0}f(x)dx
+> \lim_{n\rightarrow +\infty} \frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n}) = \int^{1}_{0}f(x)dx
 > $$
 > 需要理解的是，定积分所求的就是此函数曲线所对应的面积大小，只不过这里用极限的思想进行引申，相当于很多个非常小的四边形面积求和
 
@@ -83,7 +85,7 @@ $$
 >
 > 推广：
 > $$
-> \lim_{n\rightarrow +\infin}\frac{b-a}{n}\sum_{k=1}^{n}f(a+\frac{k(b-a)}{n}) = \int^{b}_{a}f(x)dx
+> \lim_{n\rightarrow +\infty}\frac{b-a}{n}\sum_{k=1}^{n}f(a+\frac{k(b-a)}{n}) = \int^{b}_{a}f(x)dx
 > $$
 > 原理：
 >
@@ -97,15 +99,17 @@ $$
 $$
 \lim_{n \rightarrow +\infin}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{n}{(n+i)(n^2+j^2)}
 $$
+
 求解：
+
 $$
-\lim_{n \rightarrow +\infin}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{n}{(n+i)(n^2+j^2)}\\
-原式=\lim_{n\rightarrow+\infin}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(n^2+j^2)}\\
+\lim_{n \rightarrow +\infty}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{n}{(n+i)(n^2+j^2)}\\
+原式=\lim_{n\rightarrow+\infty}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(n^2+j^2)}\\
 很明显后面哪个需要多乘一个n^2，所以需要在前面除一个n^2\\
 \begin{aligned}
-原式 &= \lim_{n\rightarrow+\infin} \frac{1}{n^2}\times \sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(\frac{n^2+j^2}{n^2})}\\
-&=\lim_{n\rightarrow+\infin}\frac{1}{n^2}\times \sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(1+(\frac{j}{n})^2)}\\
-&=\lim_{n\rightarrow+\infin}\frac{1}{n}\times \sum_{i=1}^{n}\frac{1}{1+\frac{i}{n}} \times \frac{1}{n} \times \sum_{j=1}^{n}\frac{1}{1+(\frac{j}{n})^2}\\
+原式 &= \lim_{n\rightarrow+\infty} \frac{1}{n^2}\times \sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(\frac{n^2+j^2}{n^2})}\\
+&=\lim_{n\rightarrow+\infty}\frac{1}{n^2}\times \sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(1+(\frac{j}{n})^2)}\\
+&=\lim_{n\rightarrow+\infty}\frac{1}{n}\times \sum_{i=1}^{n}\frac{1}{1+\frac{i}{n}} \times \frac{1}{n} \times \sum_{j=1}^{n}\frac{1}{1+(\frac{j}{n})^2}\\
 根据定理公式，得到&=\int^{1}_{0}\frac{1}{1+x} dx \times \int^{1}_{0} \frac{1}{1+x^2} dx\\
 进而进行积分得到结果&=\ln(1+x)|^{1}_{0} \times \arctan(x)|^{1}_{0}\\
 &=\frac{\pi}{4} \ln2
@@ -178,7 +182,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <blockquote>
 <p>核心公式：<br>
 $$<br>
-\lim_{n\rightarrow +\infin} \frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n}) = \int^{1}_{0}f(x)dx<br>
+\lim_{n\rightarrow +\infty} \frac{1}{n}\sum_{k=1}^{n}f(\frac{k}{n}) = \int^{1}_{0}f(x)dx<br>
 $$<br>
 需要理解的是，定积分所求的就是此函数曲线所对应的面积大小，只不过这里用极限的思想进行引申，相当于很多个非常小的四边形面积求和</p>
 </blockquote>
@@ -187,7 +191,7 @@ $$<br>
 <div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
 <p>推广：<br>
 $$<br>
-\lim_{n\rightarrow +\infin}\frac{b-a}{n}\sum_{k=1}^{n}f(a+\frac{k(b-a)}{n}) = \int^{b}_{a}f(x)dx<br>
+\lim_{n\rightarrow +\infty}\frac{b-a}{n}\sum_{k=1}^{n}f(a+\frac{k(b-a)}{n}) = \int^{b}_{a}f(x)dx<br>
 $$<br>
 原理：</p>
 <p>把区间$0\rightarrow1$推广到区间$a\rightarrow b$，区间每一段的长度从$\frac{1-0}{n}$变为$\frac{b-1}{n}$，对应的函数值由$f(\frac{1}{n}),f(\frac{2}{n}),...,f(\frac{n}{n})$变为对应的$f(a+\frac{b-1}{n}),f(a+\frac{2(b-a)}{n}),f(a+\frac{3(b-a)}{n}),...,f(a+\frac{(n-1)(b-a)}{n}),f(a+\frac{n(b-a)}{n})$</p>
@@ -197,16 +201,16 @@ $$<br>
 <p>计算极限<br>
 $$<br>
 \lim_{n \rightarrow +\infin}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{n}{(n+i)(n^2+j^2)}<br>
-$$<br>
-求解：<br>
-$$<br>
-\lim_{n \rightarrow +\infin}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{n}{(n+i)(n^2+j^2)}\<br>
-原式=\lim_{n\rightarrow+\infin}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(n^2+j^2)}\<br>
+$$</p>
+<p>求解：</p>
+<p>$$<br>
+\lim_{n \rightarrow +\infty}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{n}{(n+i)(n^2+j^2)}\<br>
+原式=\lim_{n\rightarrow+\infty}\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(n^2+j^2)}\<br>
 很明显后面哪个需要多乘一个n^2，所以需要在前面除一个n^2\<br>
 \begin{aligned}<br>
-原式 &amp;= \lim_{n\rightarrow+\infin} \frac{1}{n^2}\times \sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(\frac{n^2+j^2}{n^2})}\<br>
-&amp;=\lim_{n\rightarrow+\infin}\frac{1}{n^2}\times \sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(1+(\frac{j}{n})^2)}\<br>
-&amp;=\lim_{n\rightarrow+\infin}\frac{1}{n}\times \sum_{i=1}^{n}\frac{1}{1+\frac{i}{n}} \times \frac{1}{n} \times \sum_{j=1}^{n}\frac{1}{1+(\frac{j}{n})^2}\<br>
+原式 &amp;= \lim_{n\rightarrow+\infty} \frac{1}{n^2}\times \sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(\frac{n^2+j^2}{n^2})}\<br>
+&amp;=\lim_{n\rightarrow+\infty}\frac{1}{n^2}\times \sum_{i=1}^{n}\sum_{j=1}^{n}\frac{1}{(1+\frac{i}{n})(1+(\frac{j}{n})^2)}\<br>
+&amp;=\lim_{n\rightarrow+\infty}\frac{1}{n}\times \sum_{i=1}^{n}\frac{1}{1+\frac{i}{n}} \times \frac{1}{n} \times \sum_{j=1}^{n}\frac{1}{1+(\frac{j}{n})^2}\<br>
 根据定理公式，得到&amp;=\int^{1}<em>{0}\frac{1}{1+x} dx \times \int^{1}</em>{0} \frac{1}{1+x^2} dx\<br>
 进而进行积分得到结果&amp;=\ln(1+x)|^{1}<em>{0} \times \arctan(x)|^{1}</em>{0}\<br>
 &amp;=\frac{\pi}{4} \ln2<br>
