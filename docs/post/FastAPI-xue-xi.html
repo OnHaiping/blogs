@@ -242,14 +242,14 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 
 <span class="pl-k">class</span> <span class="pl-v">Delivery</span>(<span class="pl-v">BaseModel</span>):
-   <span class="pl-s1">timestamp</span>: <span class="pl-s1">datetime</span>
-   <span class="pl-s1">dimensions</span>: <span class="pl-v">Tuple</span>[<span class="pl-s1">int</span>, <span class="pl-s1">int</span>]
+   <span class="pl-s1">timestamp</span>: <span class="pl-smi">datetime</span>
+   <span class="pl-s1">dimensions</span>: <span class="pl-v">Tuple</span>[<span class="pl-smi">int</span>, <span class="pl-smi">int</span>]
 
 
-<span class="pl-s1">m</span> <span class="pl-c1">=</span> <span class="pl-v">Delivery</span>(<span class="pl-s1">timestamp</span><span class="pl-c1">=</span><span class="pl-s">'2020-01-02T03:04:05Z'</span>, <span class="pl-s1">dimensions</span><span class="pl-c1">=</span>[<span class="pl-s">'10'</span>, <span class="pl-s">'20'</span>])
-<span class="pl-en">print</span>(<span class="pl-en">repr</span>(<span class="pl-s1">m</span>.<span class="pl-s1">timestamp</span>))
+<span class="pl-s1">m</span> <span class="pl-c1">=</span> <span class="pl-en">Delivery</span>(<span class="pl-s1">timestamp</span><span class="pl-c1">=</span><span class="pl-s">'2020-01-02T03:04:05Z'</span>, <span class="pl-s1">dimensions</span><span class="pl-c1">=</span>[<span class="pl-s">'10'</span>, <span class="pl-s">'20'</span>])
+<span class="pl-en">print</span>(<span class="pl-en">repr</span>(<span class="pl-s1">m</span>.<span class="pl-c1">timestamp</span>))
 <span class="pl-c"># &gt; datetime.datetime(2020, 1, 2, 3, 4, 5, tzinfo=TzInfo(UTC))</span>
-<span class="pl-en">print</span>(<span class="pl-s1">m</span>.<span class="pl-s1">dimensions</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">m</span>.<span class="pl-c1">dimensions</span>)
 <span class="pl-c"># &gt; (10, 20)</span></pre></div>
 <p>可以更好的处理数据</p>
 </blockquote>
@@ -259,15 +259,15 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># web应用程序  : 遵循http协议</span>
 <span class="pl-k">import</span> <span class="pl-s1">socket</span>
 
-<span class="pl-s1">sock</span> <span class="pl-c1">=</span> <span class="pl-s1">socket</span>.<span class="pl-en">socket</span>()
+<span class="pl-s1">sock</span> <span class="pl-c1">=</span> <span class="pl-s1">socket</span>.<span class="pl-c1">socket</span>()
 
-<span class="pl-s1">sock</span>.<span class="pl-en">bind</span>((<span class="pl-s">"127.0.0.1"</span>, <span class="pl-c1">1010</span>))
-<span class="pl-s1">sock</span>.<span class="pl-en">listen</span>(<span class="pl-c1">5</span>)
+<span class="pl-s1">sock</span>.<span class="pl-c1">bind</span>((<span class="pl-s">"127.0.0.1"</span>, <span class="pl-c1">1010</span>))
+<span class="pl-s1">sock</span>.<span class="pl-c1">listen</span>(<span class="pl-c1">5</span>)
 
 <span class="pl-k">while</span> <span class="pl-c1">1</span>:
     <span class="pl-c"># 服务端要实现先收再发</span>
-    <span class="pl-s1">conn</span>, <span class="pl-s1">addr</span> <span class="pl-c1">=</span> <span class="pl-s1">sock</span>.<span class="pl-en">accept</span>()  <span class="pl-c"># 阻塞等待客户端连接</span>
-    <span class="pl-s1">data</span> <span class="pl-c1">=</span> <span class="pl-s1">conn</span>.<span class="pl-en">recv</span>(<span class="pl-c1">1024</span>)
+    <span class="pl-s1">conn</span>, <span class="pl-s1">addr</span> <span class="pl-c1">=</span> <span class="pl-s1">sock</span>.<span class="pl-c1">accept</span>()  <span class="pl-c"># 阻塞等待客户端连接</span>
+    <span class="pl-s1">data</span> <span class="pl-c1">=</span> <span class="pl-s1">conn</span>.<span class="pl-c1">recv</span>(<span class="pl-c1">1024</span>)
     <span class="pl-en">print</span>(<span class="pl-s">"客户端发送的请求信息<span class="pl-cce">\n</span>"</span>, <span class="pl-s1">data</span>)
     <span class="pl-c"># 请求的时候不用管是因为浏览器已经帮我们已经封装好了</span>
 
@@ -275,8 +275,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <span class="pl-c"># conn.send(b"hello,world!")</span>
 
     <span class="pl-c"># 换成下面这样的带有响应头的数据，就符合http协议了</span>
-    <span class="pl-s1">conn</span>.<span class="pl-en">send</span>(<span class="pl-s">b"HTTP/1.1 200 OK<span class="pl-cce">\r</span><span class="pl-cce">\n</span>hi<span class="pl-cce">\r</span><span class="pl-cce">\n</span><span class="pl-cce">\r</span><span class="pl-cce">\n</span>&lt;h1&gt;hello,world!&lt;/h1&gt;"</span>)
-    <span class="pl-s1">conn</span>.<span class="pl-en">close</span>()
+    <span class="pl-s1">conn</span>.<span class="pl-c1">send</span>(<span class="pl-s">b"HTTP/1.1 200 OK<span class="pl-cce">\r</span><span class="pl-cce">\n</span>hi<span class="pl-cce">\r</span><span class="pl-cce">\n</span><span class="pl-cce">\r</span><span class="pl-cce">\n</span>&lt;h1&gt;hello,world!&lt;/h1&gt;"</span>)
+    <span class="pl-s1">conn</span>.<span class="pl-c1">close</span>()
    </pre></div>
 <p>一般会给直接设置好</p>
 <h2>API接口</h2>
@@ -298,27 +298,27 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h2>初步开始</h2>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">fastapi</span> <span class="pl-k">import</span> <span class="pl-v">FastAPI</span>
 
-<span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-v">FastAPI</span>()
+<span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-en">FastAPI</span>()
 
 
-<span class="pl-en">@<span class="pl-s1">app</span>.<span class="pl-en">get</span>(<span class="pl-s">"/"</span>)</span>
+<span class="pl-en">@<span class="pl-s1">app</span>.<span class="pl-c1">get</span>(<span class="pl-s">"/"</span>)</span>
 <span class="pl-c"># 在def前面添加一个async就能实现异步</span>
 <span class="pl-k">async</span> <span class="pl-k">def</span> <span class="pl-en">home</span>():
     <span class="pl-k">return</span> {<span class="pl-s">"user_id"</span>: <span class="pl-c1">1001</span>}</pre></div>
 <p>需要区分的是，我们是利用web框架快速搭建起来的一个web应用程序</p>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">fastapi</span> <span class="pl-k">import</span> <span class="pl-v">FastAPI</span>
 
-<span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-v">FastAPI</span>()
+<span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-en">FastAPI</span>()
 
 <span class="pl-c"># 进行路由映射、构建装饰器</span>
 <span class="pl-c"># 路径操作装饰器</span>
-<span class="pl-en">@<span class="pl-s1">app</span>.<span class="pl-en">get</span>(<span class="pl-s">"/"</span>)</span>
+<span class="pl-en">@<span class="pl-s1">app</span>.<span class="pl-c1">get</span>(<span class="pl-s">"/"</span>)</span>
 <span class="pl-c"># 在def前面添加一个async就能实现异步</span>
 <span class="pl-c"># 路径操作的函数</span>
 <span class="pl-k">async</span> <span class="pl-k">def</span> <span class="pl-en">home</span>():
     <span class="pl-k">return</span> {<span class="pl-s">"user_id"</span>: <span class="pl-c1">10012</span>}
 
-<span class="pl-en">@<span class="pl-s1">app</span>.<span class="pl-en">get</span>(<span class="pl-s">"/shop"</span>)</span>
+<span class="pl-en">@<span class="pl-s1">app</span>.<span class="pl-c1">get</span>(<span class="pl-s">"/shop"</span>)</span>
 <span class="pl-k">async</span> <span class="pl-k">def</span> <span class="pl-en">shop</span>():
     <span class="pl-k">return</span> {<span class="pl-s">"shop_id"</span>: <span class="pl-s">"10012"</span>}</pre></div>
 <h2>文档的使用以及各个参数设置</h2>
@@ -326,10 +326,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>例如下面的代码：</p>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">fastapi</span> <span class="pl-k">import</span> <span class="pl-v">FastAPI</span>
 
-<span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-v">FastAPI</span>()
+<span class="pl-s1">app</span> <span class="pl-c1">=</span> <span class="pl-en">FastAPI</span>()
 
 <span class="pl-c"># 这里会有很多的参数，大部分都是应用在文档上的，/docs 可以实现在开发阶段测试的各个功能</span>
-<span class="pl-en">@<span class="pl-s1">app</span>.<span class="pl-en">get</span>(<span class="pl-s">"/"</span>,</span>
+<span class="pl-en">@<span class="pl-s1">app</span>.<span class="pl-c1">get</span>(<span class="pl-s">"/"</span>,</span>
 <span class="pl-en">         <span class="pl-s1">tags</span><span class="pl-c1">=</span>[<span class="pl-s">"主页"</span>],</span>
 <span class="pl-en">         <span class="pl-s1">description</span><span class="pl-c1">=</span><span class="pl-s">"这是一个主页接口"</span>,</span>
 <span class="pl-en">         <span class="pl-s1">summary</span><span class="pl-c1">=</span><span class="pl-s">"主页接口"</span>,</span>
@@ -337,7 +337,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-k">def</span> <span class="pl-en">home</span>():
     <span class="pl-k">return</span> {<span class="pl-s">"user_id"</span>: <span class="pl-c1">1001</span>}</pre></div>
 <h2>路由的设置</h2>
-<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-s1">users</span> <span class="pl-c1">=</span> <span class="pl-v">APIRouter</span>()</pre></div>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-s1">users</span> <span class="pl-c1">=</span> <span class="pl-en">APIRouter</span>()</pre></div>
 <p>关键就在于对子路由进行一个实例化</p>
 <p>实例化之后能够实现</p>
 <pre lang="ptyhon" class="notranslate"><code class="notranslate">http://127.0.0.1:1010/shop/food
@@ -347,8 +347,8 @@ http://127.0.0.1:1010/shop/clothes
 <h2>查询参数</h2>
 <p><strong>路径函数中声明不属于路径参数的其他函数参数时候，他们将被自动解释为”查询字符串“参数，就是url?之后要用&amp;分割的key-value键值对</strong></p>
 <p>例如下面代码中的</p>
-<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-en">@<span class="pl-s1">app02</span>.<span class="pl-en">get</span>(<span class="pl-s">"/jobs"</span>)</span>
-<span class="pl-k">async</span> <span class="pl-k">def</span> <span class="pl-en">job</span>(<span class="pl-s1">jobs</span>: <span class="pl-s1">str</span>, <span class="pl-s1">a</span>, <span class="pl-s1">ab</span>):
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-en">@<span class="pl-s1">app02</span>.<span class="pl-c1">get</span>(<span class="pl-s">"/jobs"</span>)</span>
+<span class="pl-k">async</span> <span class="pl-k">def</span> <span class="pl-en">job</span>(<span class="pl-s1">jobs</span>: <span class="pl-smi">str</span>, <span class="pl-s1">a</span>, <span class="pl-s1">ab</span>):
     <span class="pl-k">return</span> {
         <span class="pl-s">"msg"</span>: <span class="pl-s1">jobs</span>
     }</pre></div>
@@ -357,8 +357,8 @@ http://127.0.0.1:1010/shop/clothes
 <p>三个键值对是按照**&amp;**作为分割符</p>
 <p>当然是可以将键值对设置为不确认</p>
 <p>例如下面的代码：</p>
-<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-en">@<span class="pl-s1">app02</span>.<span class="pl-en">get</span>(<span class="pl-s">"/jobs/{a}"</span>)</span>
-<span class="pl-k">async</span> <span class="pl-k">def</span> <span class="pl-en">job</span>(<span class="pl-s1">jobs</span>: <span class="pl-s1">str</span>, <span class="pl-s1">a</span><span class="pl-c1">=</span><span class="pl-c1">None</span>, <span class="pl-s1">ab</span><span class="pl-c1">=</span><span class="pl-c1">None</span>):
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-en">@<span class="pl-s1">app02</span>.<span class="pl-c1">get</span>(<span class="pl-s">"/jobs/{a}"</span>)</span>
+<span class="pl-k">async</span> <span class="pl-k">def</span> <span class="pl-en">job</span>(<span class="pl-s1">jobs</span>: <span class="pl-smi">str</span>, <span class="pl-s1">a</span><span class="pl-c1">=</span><span class="pl-c1">None</span>, <span class="pl-s1">ab</span><span class="pl-c1">=</span><span class="pl-c1">None</span>):
     <span class="pl-k">return</span> {
         <span class="pl-s">"jobs"</span>: <span class="pl-s1">jobs</span>,
         <span class="pl-s">"a"</span>: <span class="pl-s1">a</span>,
@@ -376,11 +376,11 @@ http://127.0.0.1:1010/shop/clothes
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">fastapi</span> <span class="pl-k">import</span> <span class="pl-v">APIRouter</span>
 <span class="pl-k">from</span> <span class="pl-s1">typing</span> <span class="pl-k">import</span> <span class="pl-v">Union</span>
 
-<span class="pl-s1">app02</span> <span class="pl-c1">=</span> <span class="pl-v">APIRouter</span>()
+<span class="pl-s1">app02</span> <span class="pl-c1">=</span> <span class="pl-en">APIRouter</span>()
 
 
-<span class="pl-en">@<span class="pl-s1">app02</span>.<span class="pl-en">get</span>(<span class="pl-s">"/jobs/{a}"</span>)</span>
-<span class="pl-k">async</span> <span class="pl-k">def</span> <span class="pl-en">job</span>(<span class="pl-s1">jobs</span>: <span class="pl-v">Union</span>[<span class="pl-s1">str</span>, <span class="pl-c1">None</span>], <span class="pl-s1">a</span><span class="pl-c1">=</span><span class="pl-c1">None</span>, <span class="pl-s1">ab</span><span class="pl-c1">=</span><span class="pl-c1">None</span>):
+<span class="pl-en">@<span class="pl-s1">app02</span>.<span class="pl-c1">get</span>(<span class="pl-s">"/jobs/{a}"</span>)</span>
+<span class="pl-k">async</span> <span class="pl-k">def</span> <span class="pl-en">job</span>(<span class="pl-s1">jobs</span>: <span class="pl-v">Union</span>[<span class="pl-smi">str</span>, <span class="pl-c1">None</span>], <span class="pl-s1">a</span><span class="pl-c1">=</span><span class="pl-c1">None</span>, <span class="pl-s1">ab</span><span class="pl-c1">=</span><span class="pl-c1">None</span>):
     <span class="pl-k">return</span> {
         <span class="pl-s">"jobs"</span>: <span class="pl-s1">jobs</span>,
         <span class="pl-s">"a"</span>: <span class="pl-s1">a</span>,

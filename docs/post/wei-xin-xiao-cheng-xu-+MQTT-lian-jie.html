@@ -287,7 +287,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h2>微信小程序</h2>
 <h3>1 注册微信小程序账号</h3>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># 1 访问微信公众平台，注册一个微信小程序账号</span>
-	<span class="pl-c1">-</span><span class="pl-s1">https</span>:<span class="pl-c1">//</span><span class="pl-s1">mp</span>.<span class="pl-s1">weixin</span>.<span class="pl-s1">qq</span>.<span class="pl-s1">com</span><span class="pl-c1">/</span>
+	<span class="pl-c1">-</span><span class="pl-s1">https</span>:<span class="pl-c1">//</span><span class="pl-s1">mp</span>.<span class="pl-c1">weixin</span>.<span class="pl-c1">qq</span>.<span class="pl-c1">com</span><span class="pl-c1">/</span>
         
 <span class="pl-c"># 2 重点：注册使用邮箱注册</span>
 	<span class="pl-s1">未被微信公众平台注册</span>，<span class="pl-s1">未被微信开放平台注册</span>，<span class="pl-s1">未被个人微信号绑定的邮箱</span></pre></div>
@@ -295,12 +295,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h4>2.1 创建项目流程（开发者）</h4>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># 1 获取 小程序id</span>
 	<span class="pl-c1">-</span><span class="pl-s1">小程序后台</span><span class="pl-c1">-</span><span class="pl-c1">-</span>》<span class="pl-s1">开发</span><span class="pl-c1">-</span><span class="pl-c1">-</span>》<span class="pl-s1">开发管理</span><span class="pl-c1">-</span><span class="pl-c1">-</span>》<span class="pl-s1">开发设置</span><span class="pl-c1">-</span><span class="pl-c1">-</span>》<span class="pl-s1">开发者ID</span>
-    <span class="pl-c1">-</span><span class="pl-v">AppID</span>(<span class="pl-s1">小程序ID</span>)	     <span class="pl-s1">wx539e097341fc7588</span>
+    <span class="pl-c1">-</span><span class="pl-en">AppID</span>(<span class="pl-s1">小程序ID</span>)	     <span class="pl-s1">wx539e097341fc7588</span>
     
     
 <span class="pl-c"># 2 下载微信开发者工具--》这个工具必须联网才能使用</span>
-	<span class="pl-c1">-</span><span class="pl-s1">下载地址</span>：<span class="pl-s1">https</span>:<span class="pl-c1">//</span><span class="pl-s1">developers</span>.<span class="pl-s1">weixin</span>.<span class="pl-s1">qq</span>.<span class="pl-s1">com</span><span class="pl-c1">/</span><span class="pl-s1">miniprogram</span><span class="pl-c1">/</span><span class="pl-s1">dev</span><span class="pl-c1">/</span><span class="pl-s1">devtools</span><span class="pl-c1">/</span><span class="pl-s1">stable</span>.<span class="pl-s1">html</span>
-    <span class="pl-c1">-</span><span class="pl-s1">wechat_devtools_1</span>.<span class="pl-c1">06.2402040_</span><span class="pl-s1">win32_x64</span>.<span class="pl-s1">exe</span>
+	<span class="pl-c1">-</span><span class="pl-s1">下载地址</span>：<span class="pl-s1">https</span>:<span class="pl-c1">//</span><span class="pl-s1">developers</span>.<span class="pl-c1">weixin</span>.<span class="pl-c1">qq</span>.<span class="pl-c1">com</span><span class="pl-c1">/</span><span class="pl-s1">miniprogram</span><span class="pl-c1">/</span><span class="pl-s1">dev</span><span class="pl-c1">/</span><span class="pl-s1">devtools</span><span class="pl-c1">/</span><span class="pl-s1">stable</span>.<span class="pl-c1">html</span>
+    <span class="pl-c1">-</span><span class="pl-s1">wechat_devtools_1</span>.<span class="pl-c1">06.2402040_</span><span class="pl-c1">win32_x64</span>.<span class="pl-c1">exe</span>
     
 <span class="pl-c"># 3 一路下一步安装--》桌面有个快捷方式</span>
 	<span class="pl-c1">-</span><span class="pl-s1">微信开发者工具就等同于</span> <span class="pl-s1">pycharm</span>
@@ -318,11 +318,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-c"># 3 创建项目</span>
 	<span class="pl-c1">-</span><span class="pl-s1">填写名字</span>
     <span class="pl-c1">-</span><span class="pl-s1">路径</span>
-    <span class="pl-c1">-</span><span class="pl-v">APPID</span>
+    <span class="pl-c1">-</span><span class="pl-c1">APPID</span>
     <span class="pl-c1">-</span><span class="pl-s1">不使用云开发</span>【<span class="pl-s1">使用腾讯云的云函数</span>，<span class="pl-s1">服务器等等</span>，<span class="pl-s1">需要花钱</span>】
     <span class="pl-c1">-</span><span class="pl-s1">不使用模版</span>
     	<span class="pl-c1">-</span><span class="pl-s1">可以选择js基础版</span><span class="pl-c1">-</span><span class="pl-c1">-</span>》<span class="pl-s1">别的别选了</span>
-        	<span class="pl-c1">-</span><span class="pl-v">TS</span>：<span class="pl-s1">咱们不会</span>
+        	<span class="pl-c1">-</span><span class="pl-c1">TS</span>：<span class="pl-s1">咱们不会</span>
             <span class="pl-c1">-</span><span class="pl-s1">其他模版功能比较复杂对新手不友好</span>
             
             
@@ -344,19 +344,19 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h4>3.1 项目目录结构</h4>
 <h4>3.1.1 目录介绍</h4>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># 1 项目主配置文件，在项目根路径下，控制整个项目的</span>
-	<span class="pl-c1">-</span><span class="pl-s1">app</span>.<span class="pl-s1">js</span>    <span class="pl-c"># 小程序入口文件，小程序启动，会执行这个js</span>
-    <span class="pl-c1">-</span><span class="pl-s1">app</span>.<span class="pl-s1">json</span>  <span class="pl-c"># 小程序的全局配置：顶部的颜色，标题。。。</span>
-    <span class="pl-c1">-</span><span class="pl-s1">app</span>.<span class="pl-s1">wxss</span>  <span class="pl-c"># 小程序全局样式：所有样式，全局生效</span>
+	<span class="pl-c1">-</span><span class="pl-s1">app</span>.<span class="pl-c1">js</span>    <span class="pl-c"># 小程序入口文件，小程序启动，会执行这个js</span>
+    <span class="pl-c1">-</span><span class="pl-s1">app</span>.<span class="pl-c1">json</span>  <span class="pl-c"># 小程序的全局配置：顶部的颜色，标题。。。</span>
+    <span class="pl-c1">-</span><span class="pl-s1">app</span>.<span class="pl-c1">wxss</span>  <span class="pl-c"># 小程序全局样式：所有样式，全局生效</span>
     
     <span class="pl-c"># app.js 和app.json 必须有，没有不行</span>
     
     
 <span class="pl-c"># 2 页面文件</span>
 	<span class="pl-c1">-</span><span class="pl-s1">pages文件夹下</span>，<span class="pl-s1">有一个个的文件夹</span>（<span class="pl-s1">index</span>,<span class="pl-s1">login</span>,<span class="pl-s1">register</span>）<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">&gt;</span><span class="pl-s1">每个文件夹下有4个文件</span>
-    	<span class="pl-c1">-</span><span class="pl-s1">xx</span>.<span class="pl-s1">js</span>     <span class="pl-c"># 页面逻辑，js代码控制</span>
-        <span class="pl-c1">-</span><span class="pl-s1">xx</span>.<span class="pl-s1">wxml</span>   <span class="pl-c"># 页面结构，布局，html---》wxml就等同于html，但标签有些区别</span>
-        <span class="pl-c1">-</span><span class="pl-s1">xx</span>.<span class="pl-s1">json</span>   <span class="pl-c"># 页面配置，当前页面顶部颜色，标题。。</span>
-        <span class="pl-c1">-</span><span class="pl-s1">xx</span>.<span class="pl-s1">wxss</span>   <span class="pl-c"># 页面的样式，如果全局样式也有，以当前页面为准</span>
+    	<span class="pl-c1">-</span><span class="pl-s1">xx</span>.<span class="pl-c1">js</span>     <span class="pl-c"># 页面逻辑，js代码控制</span>
+        <span class="pl-c1">-</span><span class="pl-s1">xx</span>.<span class="pl-c1">wxml</span>   <span class="pl-c"># 页面结构，布局，html---》wxml就等同于html，但标签有些区别</span>
+        <span class="pl-c1">-</span><span class="pl-s1">xx</span>.<span class="pl-c1">json</span>   <span class="pl-c"># 页面配置，当前页面顶部颜色，标题。。</span>
+        <span class="pl-c1">-</span><span class="pl-s1">xx</span>.<span class="pl-c1">wxss</span>   <span class="pl-c"># 页面的样式，如果全局样式也有，以当前页面为准</span>
     <span class="pl-c"># xx.js和xx.wxml 必须得，不能没有</span>
     
     
@@ -364,35 +364,35 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="highlight highlight-source-python"><pre class="notranslate">├── <span class="pl-s1">components</span>                  【<span class="pl-s1">页面中使用的组件</span>】
 ├── <span class="pl-s1">pages</span>   					【<span class="pl-s1">页面文件目录</span>】
 │   ├── <span class="pl-s1">index</span>					【<span class="pl-s1">页面</span>】
-│   │   ├── <span class="pl-s1">index</span>.<span class="pl-s1">js</span>				【<span class="pl-s1">页面JS</span>】
-│   │   ├── <span class="pl-s1">index</span>.<span class="pl-s1">json</span>				【<span class="pl-s1">页面配置</span>】
-│   │   ├── <span class="pl-s1">index</span>.<span class="pl-s1">wxml</span>				【<span class="pl-s1">页面HTML</span>】
-│   │   └── <span class="pl-s1">index</span>.<span class="pl-s1">wxss</span>				【<span class="pl-s1">页面CSS</span>】
+│   │   ├── <span class="pl-s1">index</span>.<span class="pl-c1">js</span>				【<span class="pl-s1">页面JS</span>】
+│   │   ├── <span class="pl-s1">index</span>.<span class="pl-c1">json</span>				【<span class="pl-s1">页面配置</span>】
+│   │   ├── <span class="pl-s1">index</span>.<span class="pl-c1">wxml</span>				【<span class="pl-s1">页面HTML</span>】
+│   │   └── <span class="pl-s1">index</span>.<span class="pl-c1">wxss</span>				【<span class="pl-s1">页面CSS</span>】
 │   └── <span class="pl-s1">logs</span>					【<span class="pl-s1">页面</span>】
-│       ├── <span class="pl-s1">logs</span>.<span class="pl-s1">js</span>					...
-│       ├── <span class="pl-s1">logs</span>.<span class="pl-s1">json</span>				...
-│       ├── <span class="pl-s1">logs</span>.<span class="pl-s1">wxml</span>				...
-│       └── <span class="pl-s1">logs</span>.<span class="pl-s1">wxss</span>				...
-├── <span class="pl-s1">utils</span>						【<span class="pl-s1">自定义工具</span>】
-│	└── <span class="pl-s1">utils</span>.<span class="pl-s1">js</span>					【<span class="pl-s1">功能的定义</span>】
-├── <span class="pl-s1">app</span>.<span class="pl-s1">js</span>						【<span class="pl-s1">全局JS</span>】
-├── <span class="pl-s1">app</span>.<span class="pl-s1">json</span>					【<span class="pl-s1">全局配置</span>】
-├── <span class="pl-s1">app</span>.<span class="pl-s1">wxss</span>					【<span class="pl-s1">全局CSS</span>】
-├── <span class="pl-s1">project</span>.<span class="pl-s1">config</span>.<span class="pl-s1">json</span>			【<span class="pl-s1">开发者工具默认配置</span>】
-├── <span class="pl-s1">project</span>.<span class="pl-s1">private</span>.<span class="pl-s1">config</span>.<span class="pl-s1">json</span>	【<span class="pl-s1">开发者工具用户配置</span>,<span class="pl-s1">在这里修改</span>，<span class="pl-s1">优先用这个</span>，<span class="pl-s1">可以删除</span>】
-├── .<span class="pl-s1">eslintrc</span>.<span class="pl-s1">js</span>				【<span class="pl-v">ESlint语法检查配置</span>】
-├── <span class="pl-s1">sitemap</span>.<span class="pl-s1">json</span>				【<span class="pl-s1">微信收录页面</span>，<span class="pl-s1">用于搜索</span>，<span class="pl-s1">上线后</span>，<span class="pl-s1">搜索关键字就可以搜到我们</span>】</pre></div>
+│       ├── <span class="pl-s1">logs</span>.<span class="pl-c1">js</span>					...
+│       ├── <span class="pl-c1">logs</span>.<span class="pl-c1">json</span>				...
+│       ├── <span class="pl-c1">logs</span>.<span class="pl-c1">wxml</span>				...
+│       └── <span class="pl-c1">logs</span>.<span class="pl-c1">wxss</span>				...
+├── <span class="pl-c1">utils</span>						【<span class="pl-s1">自定义工具</span>】
+│	└── <span class="pl-s1">utils</span>.<span class="pl-c1">js</span>					【<span class="pl-s1">功能的定义</span>】
+├── <span class="pl-s1">app</span>.<span class="pl-c1">js</span>						【<span class="pl-s1">全局JS</span>】
+├── <span class="pl-s1">app</span>.<span class="pl-c1">json</span>					【<span class="pl-s1">全局配置</span>】
+├── <span class="pl-s1">app</span>.<span class="pl-c1">wxss</span>					【<span class="pl-s1">全局CSS</span>】
+├── <span class="pl-s1">project</span>.<span class="pl-c1">config</span>.<span class="pl-c1">json</span>			【<span class="pl-s1">开发者工具默认配置</span>】
+├── <span class="pl-s1">project</span>.<span class="pl-c1">private</span>.<span class="pl-c1">config</span>.<span class="pl-c1">json</span>	【<span class="pl-s1">开发者工具用户配置</span>,<span class="pl-s1">在这里修改</span>，<span class="pl-s1">优先用这个</span>，<span class="pl-s1">可以删除</span>】
+├── .<span class="pl-c1">eslintrc</span>.<span class="pl-c1">js</span>				【<span class="pl-v">ESlint语法检查配置</span>】
+├── <span class="pl-s1">sitemap</span>.<span class="pl-c1">json</span>				【<span class="pl-s1">微信收录页面</span>，<span class="pl-s1">用于搜索</span>，<span class="pl-s1">上线后</span>，<span class="pl-s1">搜索关键字就可以搜到我们</span>】</pre></div>
 <h4>3.1.2 配置文件</h4>
 <h5>3.1.2.1 项目配置app.json</h5>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c">#1 小程序全局配置文件，用于配置小程序的一些全局属性和页面路由,默认标题，顶部颜色，是否有下拉刷新。。</span>
 
 <span class="pl-c">#2 配置参考地址</span>
-<span class="pl-s1">https</span>:<span class="pl-c1">//</span><span class="pl-s1">developers</span>.<span class="pl-s1">weixin</span>.<span class="pl-s1">qq</span>.<span class="pl-s1">com</span><span class="pl-c1">/</span><span class="pl-s1">miniprogram</span><span class="pl-c1">/</span><span class="pl-s1">dev</span><span class="pl-c1">/</span><span class="pl-s1">reference</span><span class="pl-c1">/</span><span class="pl-s1">configuration</span><span class="pl-c1">/</span><span class="pl-s1">app</span>.<span class="pl-s1">html</span>
+<span class="pl-s1">https</span>:<span class="pl-c1">//</span><span class="pl-s1">developers</span>.<span class="pl-c1">weixin</span>.<span class="pl-c1">qq</span>.<span class="pl-c1">com</span><span class="pl-c1">/</span><span class="pl-s1">miniprogram</span><span class="pl-c1">/</span><span class="pl-s1">dev</span><span class="pl-c1">/</span><span class="pl-s1">reference</span><span class="pl-c1">/</span><span class="pl-s1">configuration</span><span class="pl-c1">/</span><span class="pl-s1">app</span>.<span class="pl-c1">html</span>
     
     
 <span class="pl-c"># 3 部分参数演示</span>
     <span class="pl-s1">entryPagePath</span>：<span class="pl-s1">小程序默认启动首页</span>	
-    <span class="pl-s1">pages</span>: <span class="pl-s1">小程序总共有多少个页面</span>
+    <span class="pl-s1">pages</span>: <span class="pl-smi">小程序总共有多少个页面</span>
     <span class="pl-s1">window</span>：<span class="pl-s1">全局的默认窗口表现</span>，<span class="pl-s1">顶部颜色</span>，<span class="pl-s1">是否有下拉</span>，<span class="pl-s1">它控制很多东西</span>，<span class="pl-s1">这个经常用</span></pre></div>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/2a68b435aa20fb9e2f3b510fdf38465fa0c77699febc90249aa2494749431759/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303430313231333632373531332e706e67"><img src="https://camo.githubusercontent.com/2a68b435aa20fb9e2f3b510fdf38465fa0c77699febc90249aa2494749431759/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303430313231333632373531332e706e67" alt="image-20240401213627513" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240401213627513.png" style="max-width: 100%;"></a></p>
 <h5>3.1.2.2 页面配置 xx.json</h5>
@@ -403,7 +403,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 
 <span class="pl-c"># 4 参考文档：</span>
-<span class="pl-s1">https</span>:<span class="pl-c1">//</span><span class="pl-s1">developers</span>.<span class="pl-s1">weixin</span>.<span class="pl-s1">qq</span>.<span class="pl-s1">com</span><span class="pl-c1">/</span><span class="pl-s1">miniprogram</span><span class="pl-c1">/</span><span class="pl-s1">dev</span><span class="pl-c1">/</span><span class="pl-s1">reference</span><span class="pl-c1">/</span><span class="pl-s1">configuration</span><span class="pl-c1">/</span><span class="pl-s1">page</span>.<span class="pl-s1">html</span>
+<span class="pl-s1">https</span>:<span class="pl-c1">//</span><span class="pl-s1">developers</span>.<span class="pl-c1">weixin</span>.<span class="pl-c1">qq</span>.<span class="pl-c1">com</span><span class="pl-c1">/</span><span class="pl-s1">miniprogram</span><span class="pl-c1">/</span><span class="pl-s1">dev</span><span class="pl-c1">/</span><span class="pl-s1">reference</span><span class="pl-c1">/</span><span class="pl-s1">configuration</span><span class="pl-c1">/</span><span class="pl-s1">page</span>.<span class="pl-c1">html</span>
     
 <span class="pl-c"># 5 常用的</span>
 <span class="pl-s1">navigationBarBackgroundColor</span>	<span class="pl-c"># 导航栏背景颜色，如 #000000	</span>
@@ -415,7 +415,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-c">#3 project.private.config.json项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段</span>
 
 <span class="pl-c"># 4 参照文档</span>
-<span class="pl-s1">https</span>:<span class="pl-c1">//</span><span class="pl-s1">developers</span>.<span class="pl-s1">weixin</span>.<span class="pl-s1">qq</span>.<span class="pl-s1">com</span><span class="pl-c1">/</span><span class="pl-s1">miniprogram</span><span class="pl-c1">/</span><span class="pl-s1">dev</span><span class="pl-c1">/</span><span class="pl-s1">devtools</span><span class="pl-c1">/</span><span class="pl-s1">projectconfig</span>.<span class="pl-s1">html</span></pre></div>
+<span class="pl-s1">https</span>:<span class="pl-c1">//</span><span class="pl-s1">developers</span>.<span class="pl-c1">weixin</span>.<span class="pl-c1">qq</span>.<span class="pl-c1">com</span><span class="pl-c1">/</span><span class="pl-s1">miniprogram</span><span class="pl-c1">/</span><span class="pl-s1">dev</span><span class="pl-c1">/</span><span class="pl-s1">devtools</span><span class="pl-c1">/</span><span class="pl-s1">projectconfig</span>.<span class="pl-c1">html</span></pre></div>
 <h4>3.2 webview渲染</h4>
 <h5>3.2.1 webview和skyline渲染模式</h5>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c"># webview：老一点，稳定，支持老版本和新版本</span>
@@ -444,17 +444,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 	<span class="pl-c1">1</span> <span class="pl-s1">在pages上右键</span><span class="pl-c1">-</span><span class="pl-c1">-</span>》<span class="pl-s1">新建文件夹</span>
     <span class="pl-c1">2</span> <span class="pl-s1">在新建的文件夹上</span><span class="pl-c1">-</span><span class="pl-c1">-</span>》<span class="pl-s1">右键</span><span class="pl-c1">-</span><span class="pl-c1">-</span>》<span class="pl-s1">新建Page</span>
     <span class="pl-c1">3</span> <span class="pl-s1">多出4个文件</span>
-    	<span class="pl-s1">xx</span>.<span class="pl-s1">js</span>
-        <span class="pl-s1">xx</span>.<span class="pl-s1">wxml</span>
-        <span class="pl-s1">xx</span>.<span class="pl-s1">json</span>
-        <span class="pl-s1">xx</span>.<span class="pl-s1">wxss</span>
-    <span class="pl-c1">4</span> <span class="pl-s1">在app</span>.<span class="pl-s1">json中的page中多一行</span>
+    	<span class="pl-s1">xx</span>.<span class="pl-c1">js</span>
+        <span class="pl-s1">xx</span>.<span class="pl-c1">wxml</span>
+        <span class="pl-s1">xx</span>.<span class="pl-c1">json</span>
+        <span class="pl-s1">xx</span>.<span class="pl-c1">wxss</span>
+    <span class="pl-c1">4</span> <span class="pl-s1">在app</span>.<span class="pl-c1">json中的page中多一行</span>
         <span class="pl-s">"pages"</span>: [
             <span class="pl-s">"pages/index/index"</span>,
             <span class="pl-s">"pages/login/login"</span>
           ]
 <span class="pl-c">#### 增加页面方式二#### </span>
-	<span class="pl-c1">1</span> <span class="pl-s1">在</span> <span class="pl-s1">app</span>.<span class="pl-s1">json中</span>，<span class="pl-s1">pages中</span>，<span class="pl-s1">新增一行</span>
+	<span class="pl-c1">1</span> <span class="pl-s1">在</span> <span class="pl-s1">app</span>.<span class="pl-c1">json中</span>，<span class="pl-s1">pages中</span>，<span class="pl-s1">新增一行</span>
     <span class="pl-c1">2</span> <span class="pl-s1">会自动创建文件夹和页面</span>
     	</pre></div>
 <p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ddad44b1f0afcb9afddfe553db2b519ecf86c8a14873390642872423002dd72f/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303430313231353432363539342e706e67"><img src="https://camo.githubusercontent.com/ddad44b1f0afcb9afddfe553db2b519ecf86c8a14873390642872423002dd72f/68747470733a2f2f696d6774726f6167652d313331373136323131312e636f732e61702d6e616e6a696e672e6d7971636c6f75642e636f6d2f696d672f696d6167652d32303234303430313231353432363539342e706e67" alt="image-20240401215426594" data-canonical-src="https://imgtroage-1317162111.cos.ap-nanjing.myqcloud.com/img/image-20240401215426594.png" style="max-width: 100%;"></a></p>
@@ -498,12 +498,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-c"># # # # #app.wxss  空的# # # # ## # # # #</span>
 
 <span class="pl-c"># # # # #app.js# # # # ## # # # #</span>
-<span class="pl-v">App</span>({})
+<span class="pl-en">App</span>({})
 
 <span class="pl-c"># # # # #pages/index# # # # ## # # # #</span>
-    <span class="pl-s1">index</span>.<span class="pl-s1">js</span>
-    	<span class="pl-v">Page</span>({})
-    <span class="pl-s1">index</span>.<span class="pl-s1">json</span>
+    <span class="pl-s1">index</span>.<span class="pl-c1">js</span>
+    	<span class="pl-en">Page</span>({})
+    <span class="pl-s1">index</span>.<span class="pl-c1">json</span>
         {
           <span class="pl-s">"usingComponents"</span>: {
 
@@ -513,11 +513,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
           <span class="pl-s">"enablePullDownRefresh"</span>: <span class="pl-s1">true</span>,   
           <span class="pl-s">"backgroundTextStyle"</span>: <span class="pl-s">"light"</span> 
         }
-    <span class="pl-s1">index</span>.<span class="pl-s1">wxml</span>
-      <span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-k">class</span><span class="pl-c1">=</span><span class="pl-s">"container"</span><span class="pl-c1">&gt;</span>
+    <span class="pl-s1">index</span>.<span class="pl-c1">wxml</span>
+      <span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">class</span><span class="pl-c1">=</span><span class="pl-s">"container"</span><span class="pl-c1">&gt;</span>
         <span class="pl-s1">彭于晏</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">呸呸呸</span>
       <span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
-    <span class="pl-s1">index</span>.<span class="pl-s1">wxss</span>
+    <span class="pl-s1">index</span>.<span class="pl-c1">wxss</span>
     	<span class="pl-c1">-</span><span class="pl-s1">空的</span></pre></div>
 <h3>4 快速上手</h3>
 <h4>4.1 小程序常用组件</h4>
@@ -529,7 +529,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     。。。
     
 <span class="pl-c"># 2 小程序没有这些，自己封装的叫组件</span>
-	<span class="pl-c1">-</span><span class="pl-s1">https</span>:<span class="pl-c1">//</span><span class="pl-s1">developers</span>.<span class="pl-s1">weixin</span>.<span class="pl-s1">qq</span>.<span class="pl-s1">com</span><span class="pl-c1">/</span><span class="pl-s1">miniprogram</span><span class="pl-c1">/</span><span class="pl-s1">dev</span><span class="pl-c1">/</span><span class="pl-s1">component</span><span class="pl-c1">/</span>
+	<span class="pl-c1">-</span><span class="pl-s1">https</span>:<span class="pl-c1">//</span><span class="pl-s1">developers</span>.<span class="pl-c1">weixin</span>.<span class="pl-c1">qq</span>.<span class="pl-c1">com</span><span class="pl-c1">/</span><span class="pl-s1">miniprogram</span><span class="pl-c1">/</span><span class="pl-s1">dev</span><span class="pl-c1">/</span><span class="pl-s1">component</span><span class="pl-c1">/</span>
         
         
 <span class="pl-c"># 3 text  ---》span 不换行，放文字</span>
@@ -556,7 +556,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     
     
 <span class="pl-c"># 如何设置</span>
-<span class="pl-c1">1</span> <span class="pl-s1">在app</span>.<span class="pl-s1">json</span> <span class="pl-s1">配置</span>
+<span class="pl-c1">1</span> <span class="pl-s1">在app</span>.<span class="pl-c1">json</span> <span class="pl-s1">配置</span>
 <span class="pl-s">"tabBar"</span>: {
     <span class="pl-s">"selectedColor"</span>: <span class="pl-s">"#b4282d"</span>,
     <span class="pl-s">"position"</span>: <span class="pl-s">"bottom"</span>,
@@ -607,12 +607,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
   },
   <span class="pl-en">handleAddAge</span>(){
     <span class="pl-c1">//</span> <span class="pl-c1">1</span> <span class="pl-s1">如何取到data中的age</span>
-    <span class="pl-c1">//</span> <span class="pl-s1">console</span>.<span class="pl-en">log</span>(<span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">age</span>)
+    <span class="pl-c1">//</span> <span class="pl-s1">console</span>.<span class="pl-c1">log</span>(<span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">age</span>)
 
 
     <span class="pl-c1">//</span> <span class="pl-c1">2</span> <span class="pl-s1">让年龄</span><span class="pl-c1">+</span><span class="pl-c1">1</span>
-    <span class="pl-c1">//</span> <span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">age</span><span class="pl-c1">+=</span><span class="pl-c1">1</span>
-    <span class="pl-c1">//</span> <span class="pl-s1">console</span>.<span class="pl-en">log</span>(<span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">age</span>)
+    <span class="pl-c1">//</span> <span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">age</span><span class="pl-c1">+</span><span class="pl-c1">=</span><span class="pl-c1">1</span>
+    <span class="pl-c1">//</span> <span class="pl-s1">console</span>.<span class="pl-c1">log</span>(<span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">age</span>)
 
 
 
@@ -620,8 +620,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 
     <span class="pl-c1">//</span> <span class="pl-c1">4</span> <span class="pl-s1">要让页面也变</span>，<span class="pl-s1">借助于微信提供的</span> <span class="pl-s1">setData方法</span>
-    <span class="pl-s1">let</span> <span class="pl-s1">a</span><span class="pl-c1">=</span><span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">age</span><span class="pl-c1">+</span><span class="pl-c1">1</span>
-    <span class="pl-s1">this</span>.<span class="pl-en">setData</span>({
+    <span class="pl-s1">let</span> <span class="pl-s1">a</span><span class="pl-c1">=</span><span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">age</span><span class="pl-c1">+</span><span class="pl-c1">1</span>
+    <span class="pl-s1">this</span>.<span class="pl-c1">setData</span>({
       <span class="pl-s1">age</span>:<span class="pl-s1">a</span>
     })
 
@@ -633,26 +633,26 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <span class="pl-s1">userinfo</span>:{<span class="pl-s1">name</span>:<span class="pl-s">'lqz'</span>,<span class="pl-s1">hobby</span>:<span class="pl-s">'烫头'</span>}
 },
 <span class="pl-en">handleChangeHobby</span>(){
-    <span class="pl-s1">this</span>.<span class="pl-en">setData</span>({
+    <span class="pl-s1">this</span>.<span class="pl-c1">setData</span>({
         <span class="pl-s">'userinfo.hobby'</span>:<span class="pl-s">'篮球'</span>
     })
 }
 <span class="pl-c"># 另一种方式</span>
 <span class="pl-en">handleChangeHobby</span>(){
 
-    <span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">userinfo</span>.<span class="pl-s1">hobby</span><span class="pl-c1">=</span><span class="pl-s">'足球'</span>
-    <span class="pl-s1">this</span>.<span class="pl-en">setData</span>({
-        <span class="pl-s">'userinfo.hobby'</span>:<span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">userinfo</span>.<span class="pl-s1">hobby</span>
+    <span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">userinfo</span>.<span class="pl-c1">hobby</span><span class="pl-c1">=</span><span class="pl-s">'足球'</span>
+    <span class="pl-s1">this</span>.<span class="pl-c1">setData</span>({
+        <span class="pl-s">'userinfo.hobby'</span>:<span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">userinfo</span>.<span class="pl-c1">hobby</span>
     })
 }
 <span class="pl-c">### 修改或添加元素</span>
   <span class="pl-en">handleChangeHobby</span>(){
     <span class="pl-c1">//</span> <span class="pl-s1">解压赋值</span>
-    <span class="pl-c1">//</span> <span class="pl-s1">const</span> <span class="pl-s1">user</span><span class="pl-c1">=</span>{...<span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">userinfo</span>,<span class="pl-s1">age</span>:<span class="pl-c1">19</span>}
+    <span class="pl-c1">//</span> <span class="pl-s1">const</span> <span class="pl-s1">user</span><span class="pl-c1">=</span>{...<span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">userinfo</span>,<span class="pl-s1">age</span>:<span class="pl-c1">19</span>}
 
     <span class="pl-c1">//</span> <span class="pl-s1">简写</span>
-    <span class="pl-s1">const</span> <span class="pl-s1">userinfo</span><span class="pl-c1">=</span>{...<span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">userinfo</span>,<span class="pl-s1">age</span>:<span class="pl-c1">19</span>,<span class="pl-s1">hobby</span>:<span class="pl-s">'乒乓球'</span>}
-    <span class="pl-s1">this</span>.<span class="pl-en">setData</span>({
+    <span class="pl-s1">const</span> <span class="pl-s1">userinfo</span><span class="pl-c1">=</span>{...<span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">userinfo</span>,<span class="pl-s1">age</span>:<span class="pl-c1">19</span>,<span class="pl-s1">hobby</span>:<span class="pl-s">'乒乓球'</span>}
+    <span class="pl-s1">this</span>.<span class="pl-c1">setData</span>({
       <span class="pl-c1">//</span> <span class="pl-s1">userinfo</span>:<span class="pl-s1">userinfo</span>
       <span class="pl-s1">userinfo</span>
     })
@@ -662,50 +662,50 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <span class="pl-c">#### wxml####</span>
 <span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">显示对象</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">userinfo</span>.<span class="pl-s1">name</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">userinfo</span>.<span class="pl-s1">hobby</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span>"<span class="pl-s1">primary</span>" <span class="pl-s1">bindtap</span><span class="pl-c1">=</span>"<span class="pl-s1">handleChangeHobby</span>"<span class="pl-c1">&gt;</span><span class="pl-s1">变化爱好</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">userinfo</span>.<span class="pl-c1">name</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">userinfo</span>.<span class="pl-c1">hobby</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"primary"</span> <span class="pl-s1">bindtap</span><span class="pl-c1">=</span><span class="pl-s">"handleChangeHobby"</span><span class="pl-c1">&gt;</span><span class="pl-s1">变化爱好</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
 
 
 
 <span class="pl-c">## 7 修改数组案例</span>
 <span class="pl-c">###js####</span>
- <span class="pl-s1">handleAddName</span>(){
+ <span class="pl-en">handleAddName</span>(){
 
-      <span class="pl-c1">//</span><span class="pl-c1">1</span> <span class="pl-s1">先追加</span>，<span class="pl-s1">在setData</span><span class="pl-s1"></span>
-      <span class="pl-c1">//</span> <span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">names</span>.<span class="pl-en">push</span>(<span class="pl-s">'亚瑟王'</span>)
-      <span class="pl-c1">//</span> <span class="pl-s1">this</span>.<span class="pl-en">setData</span>({
-      <span class="pl-c1">//</span>   <span class="pl-s1">names</span>:<span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">names</span>
-      <span class="pl-c1">//</span><span class="pl-s1"></span> })
+      <span class="pl-c1">//</span><span class="pl-c1">1</span> <span class="pl-s1">先追加</span>，<span class="pl-s1">在setData</span>
+      <span class="pl-c1">//</span> <span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">names</span>.<span class="pl-c1">push</span>(<span class="pl-s">'亚瑟王'</span>)
+      <span class="pl-c1">//</span> <span class="pl-s1">this</span>.<span class="pl-c1">setData</span>({
+      <span class="pl-c1">//</span>   <span class="pl-s1">names</span>:<span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">names</span>
+      <span class="pl-c1">//</span> })
 
       <span class="pl-c1">//</span><span class="pl-c1">2</span> <span class="pl-s1">通过数组的拼接</span>
-      <span class="pl-c1">//</span> <span class="pl-s1">const</span> <span class="pl-s1">newName</span><span class="pl-c1">=</span><span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">names</span>.<span class="pl-en">concat</span>(<span class="pl-s">'甄姬'</span>) <span class="pl-c1">//</span> <span class="pl-s1">concat</span> <span class="pl-s1">不会在原数组增加</span>
-      <span class="pl-c1">//</span> <span class="pl-s1">this</span>.<span class="pl-en">setData</span>({
+      <span class="pl-c1">//</span> <span class="pl-s1">const</span> <span class="pl-s1">newName</span><span class="pl-c1">=</span><span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">names</span>.<span class="pl-c1">concat</span>(<span class="pl-s">'甄姬'</span>) <span class="pl-c1">//</span> <span class="pl-s1">concat</span> <span class="pl-s1">不会在原数组增加</span>
+      <span class="pl-c1">//</span> <span class="pl-s1">this</span>.<span class="pl-c1">setData</span>({
       <span class="pl-c1">//</span>   <span class="pl-s1">names</span>:<span class="pl-s1">newName</span>
-      <span class="pl-c1">//</span><span class="pl-s1"></span> })
+      <span class="pl-c1">//</span> })
 
       <span class="pl-c1">//</span> <span class="pl-c1">3</span> <span class="pl-s1">结构赋值</span>
-      <span class="pl-c1">//</span> <span class="pl-s1">const</span> <span class="pl-s1">newName</span><span class="pl-c1">=</span>[...<span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">names</span>,<span class="pl-s">'李白'</span>]
-      <span class="pl-c1">//</span> <span class="pl-s1">this</span>.<span class="pl-en">setData</span>({
+      <span class="pl-c1">//</span> <span class="pl-s1">const</span> <span class="pl-s1">newName</span><span class="pl-c1">=</span>[...<span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">names</span>,<span class="pl-s">'李白'</span>]
+      <span class="pl-c1">//</span> <span class="pl-s1">this</span>.<span class="pl-c1">setData</span>({
       <span class="pl-c1">//</span>   <span class="pl-s1">names</span>:<span class="pl-s1">newName</span>
-      <span class="pl-c1">//</span><span class="pl-s1"></span> })
+      <span class="pl-c1">//</span> })
 
       <span class="pl-c1">//</span> <span class="pl-c1">4</span> <span class="pl-s1">改值</span>，<span class="pl-s1">把刘亦菲改成</span> <span class="pl-s1">爱刘亦菲</span>
-      <span class="pl-c1">//</span> <span class="pl-s1">this</span>.<span class="pl-en">setData</span>({
+      <span class="pl-c1">//</span> <span class="pl-s1">this</span>.<span class="pl-c1">setData</span>({
       <span class="pl-c1">//</span>   <span class="pl-s">'names[0]'</span>:<span class="pl-s">'爱刘亦菲'</span>
-      <span class="pl-c1">//</span><span class="pl-s1"></span> })
+      <span class="pl-c1">//</span> })
 
       <span class="pl-c1">//</span> <span class="pl-c1">5</span> <span class="pl-s1">删除值</span>
       <span class="pl-c1">//</span> <span class="pl-s1">可以先把数组修改完</span>，<span class="pl-s1">再用setData赋值</span>
-      <span class="pl-s1">this</span>.<span class="pl-en">setData</span>({
-        <span class="pl-s1">names</span>:<span class="pl-s1">this</span>.<span class="pl-s1">data</span>.<span class="pl-s1">names</span>.<span class="pl-en">slice</span>(<span class="pl-c1">1</span>)
+      <span class="pl-s1">this</span>.<span class="pl-c1">setData</span>({
+        <span class="pl-s1">names</span>:<span class="pl-s1">this</span>.<span class="pl-c1">data</span>.<span class="pl-c1">names</span>.<span class="pl-c1">slice</span>(<span class="pl-c1">1</span>)
       })
   }
 
 <span class="pl-c">####wxml####</span>
 <span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">循环数组打印名字</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
 
-<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-s1">for</span><span class="pl-c1">=</span><span class="pl-s">"{{names}}"</span> <span class="pl-s1">wx</span>:<span class="pl-s1">key</span><span class="pl-c1">=</span><span class="pl-s">"index"</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">item</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-k">for</span><span class="pl-c1">=</span><span class="pl-s">"{{names}}"</span> <span class="pl-s1">wx</span>:<span class="pl-s1">key</span><span class="pl-c1">=</span><span class="pl-s">"index"</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">item</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
 <span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"primary"</span> <span class="pl-s1">bindtap</span><span class="pl-c1">=</span><span class="pl-s">"handleAddName"</span><span class="pl-c1">&gt;</span><span class="pl-s1">增加人名</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
 
 
@@ -720,7 +720,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-c">###wxml##</span>
 <span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">循环数组打印名字</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
 
-<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-s1">for</span><span class="pl-c1">=</span><span class="pl-s">"{{names}}"</span> <span class="pl-s1">wx</span>:<span class="pl-s1">key</span><span class="pl-c1">=</span><span class="pl-s">"index"</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">item</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-smi">for</span><span class="pl-c1">=</span><span class="pl-s">"{{names}}"</span> <span class="pl-s1">wx</span>:<span class="pl-smi">key</span><span class="pl-c1">=</span><span class="pl-s">"index"</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">item</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
 <span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"primary"</span> <span class="pl-s1">bindtap</span><span class="pl-c1">=</span><span class="pl-s">"handleAddName"</span><span class="pl-c1">&gt;</span><span class="pl-s1">增加人名</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
 
 <span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">列表渲染显示商品信息</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
@@ -728,17 +728,17 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-k">for</span><span class="pl-c1">=</span><span class="pl-s">"{{goodsList}}"</span> <span class="pl-s1">wx</span>:<span class="pl-s1">key</span><span class="pl-c1">=</span><span class="pl-s">"index"</span><span class="pl-c1">&gt;</span>
 <span class="pl-c1">&lt;</span>!<span class="pl-c1">-</span><span class="pl-c1">-</span> <span class="pl-s1">如果不加</span> <span class="pl-s1">wx</span>:<span class="pl-s1">key</span> <span class="pl-s1">会报警告</span>  <span class="pl-s1">wx</span>:<span class="pl-s1">key</span> <span class="pl-s1">必须唯一</span> <span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">&gt;</span>
 <span class="pl-c1">&lt;</span>!<span class="pl-c1">-</span><span class="pl-c1">-</span> <span class="pl-s1">item</span> <span class="pl-s1">只要循环数据</span>，<span class="pl-s1">在循环里面</span>，<span class="pl-s1">就会有两个值</span>：<span class="pl-s1">一个是index</span>，<span class="pl-s1">索引值</span>，<span class="pl-s1">另一个是</span> <span class="pl-s1">item</span>，<span class="pl-s1">数组循环的值</span> <span class="pl-s1">能改</span>，<span class="pl-s1">但是一般不改</span> <span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">&gt;</span>
-  <span class="pl-c1">&lt;</span><span class="pl-s1">text</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">index</span>}}<span class="pl-c1">-</span><span class="pl-s1">商品id</span>:{{<span class="pl-s1">item</span>.<span class="pl-s1">id</span>}}<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">商品名字</span>:{{<span class="pl-s1">item</span>.<span class="pl-s1">name</span>}}<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">商品价格</span>:{{<span class="pl-s1">item</span>.<span class="pl-s1">price</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">text</span><span class="pl-c1">&gt;</span>
+  <span class="pl-c1">&lt;</span><span class="pl-s1">text</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">index</span>}}<span class="pl-c1">-</span><span class="pl-s1">商品id</span>:{{<span class="pl-s1">item</span>.<span class="pl-c1">id</span>}}<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">商品名字</span>:{{<span class="pl-s1">item</span>.<span class="pl-c1">name</span>}}<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">商品价格</span>:{{<span class="pl-s1">item</span>.<span class="pl-c1">price</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">text</span><span class="pl-c1">&gt;</span>
 <span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
 
 <span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">列表渲染显示商品信息</span><span class="pl-c1">-</span><span class="pl-s1">修改item和index</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-s1">for</span><span class="pl-c1">=</span><span class="pl-s">"{{goodsList}}"</span> <span class="pl-s1">wx</span>:<span class="pl-s1">key</span><span class="pl-c1">=</span><span class="pl-s">"index"</span> <span class="pl-s1">wx</span>:<span class="pl-s1">for</span><span class="pl-c1">-</span><span class="pl-s1">item</span><span class="pl-c1">=</span><span class="pl-s">'info'</span> <span class="pl-s1">wx</span>:<span class="pl-s1">for</span><span class="pl-c1">-</span><span class="pl-s1">index</span><span class="pl-c1">=</span><span class="pl-s">'i'</span><span class="pl-c1">&gt;</span>
-  <span class="pl-c1">&lt;</span><span class="pl-s1">text</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">i</span>}}<span class="pl-c1">-</span><span class="pl-s1">商品id</span>:{{<span class="pl-s1">info</span>.<span class="pl-s1">id</span>}}<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">商品名字</span>:{{<span class="pl-s1">info</span>.<span class="pl-s1">name</span>}}<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">商品价格</span>:{{<span class="pl-s1">info</span>.<span class="pl-s1">price</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">text</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-smi">for</span><span class="pl-c1">=</span><span class="pl-s">"{{goodsList}}"</span> <span class="pl-s1">wx</span>:<span class="pl-smi">key</span><span class="pl-c1">=</span><span class="pl-s">"index"</span> <span class="pl-s1">wx</span>:<span class="pl-s1">for</span><span class="pl-c1">-</span><span class="pl-s1">item</span><span class="pl-c1">=</span><span class="pl-s">'info'</span> <span class="pl-s1">wx</span>:<span class="pl-s1">for</span><span class="pl-c1">-</span><span class="pl-s1">index</span><span class="pl-c1">=</span><span class="pl-s">'i'</span><span class="pl-c1">&gt;</span>
+  <span class="pl-c1">&lt;</span><span class="pl-s1">text</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">i</span>}}<span class="pl-c1">-</span><span class="pl-s1">商品id</span>:{{<span class="pl-s1">info</span>.<span class="pl-c1">id</span>}}<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">商品名字</span>:{{<span class="pl-s1">info</span>.<span class="pl-c1">name</span>}}<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">商品价格</span>:{{<span class="pl-s1">info</span>.<span class="pl-c1">price</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">text</span><span class="pl-c1">&gt;</span>
 <span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
 
 <span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">列表渲染显示商品信息</span><span class="pl-c1">-</span><span class="pl-s1">block</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-s1">for</span><span class="pl-c1">=</span><span class="pl-s">"{{goodsList}}"</span> <span class="pl-s1">wx</span>:<span class="pl-s1">key</span><span class="pl-c1">=</span><span class="pl-s">"index"</span> <span class="pl-s1">wx</span>:<span class="pl-s1">for</span><span class="pl-c1">-</span><span class="pl-s1">item</span><span class="pl-c1">=</span><span class="pl-s">'info'</span> <span class="pl-s1">wx</span>:<span class="pl-s1">for</span><span class="pl-c1">-</span><span class="pl-s1">index</span><span class="pl-c1">=</span><span class="pl-s">'i'</span><span class="pl-c1">&gt;</span>
-  <span class="pl-c1">&lt;</span><span class="pl-s1">block</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">i</span>}}<span class="pl-c1">-</span><span class="pl-s1">商品id</span>:{{<span class="pl-s1">info</span>.<span class="pl-s1">id</span>}}<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">商品名字</span>:{{<span class="pl-s1">info</span>.<span class="pl-s1">name</span>}}<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">商品价格</span>:{{<span class="pl-s1">info</span>.<span class="pl-s1">price</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">block</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-smi">for</span><span class="pl-c1">=</span><span class="pl-s">"{{goodsList}}"</span> <span class="pl-s1">wx</span>:<span class="pl-smi">key</span><span class="pl-c1">=</span><span class="pl-s">"index"</span> <span class="pl-s1">wx</span>:<span class="pl-s1">for</span><span class="pl-c1">-</span><span class="pl-s1">item</span><span class="pl-c1">=</span><span class="pl-s">'info'</span> <span class="pl-s1">wx</span>:<span class="pl-s1">for</span><span class="pl-c1">-</span><span class="pl-s1">index</span><span class="pl-c1">=</span><span class="pl-s">'i'</span><span class="pl-c1">&gt;</span>
+  <span class="pl-c1">&lt;</span><span class="pl-s1">block</span><span class="pl-c1">&gt;</span>{{<span class="pl-s1">i</span>}}<span class="pl-c1">-</span><span class="pl-s1">商品id</span>:{{<span class="pl-s1">info</span>.<span class="pl-c1">id</span>}}<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">商品名字</span>:{{<span class="pl-s1">info</span>.<span class="pl-c1">name</span>}}<span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">商品价格</span>:{{<span class="pl-s1">info</span>.<span class="pl-c1">price</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">block</span><span class="pl-c1">&gt;</span>
 <span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
 
 <span class="pl-c">###js###</span>
@@ -751,15 +751,15 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-s1">score</span>:<span class="pl-c1">70</span>,
 <span class="pl-c">### wxml##</span>
 <span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">条件渲染</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">input</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"text"</span> <span class="pl-s1">model</span>:<span class="pl-s1">value</span><span class="pl-c1">=</span><span class="pl-s">"{{score}}"</span> <span class="pl-s1">style</span><span class="pl-c1">=</span><span class="pl-s">"border:1rpx solid red;"</span><span class="pl-c1">/</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">input</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"text"</span> <span class="pl-s1">model</span>:<span class="pl-smi">value</span><span class="pl-c1">=</span><span class="pl-s">"{{score}}"</span> <span class="pl-s1">style</span><span class="pl-c1">=</span><span class="pl-s">"border:1rpx solid red;"</span><span class="pl-c1">/</span><span class="pl-c1">&gt;</span>
 
-<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-s1">if</span><span class="pl-c1">=</span><span class="pl-s">"{{score&gt;=90&amp;&amp;score&lt;=100}}"</span><span class="pl-c1">&gt;</span><span class="pl-s1">优秀</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-s1">elif</span><span class="pl-c1">=</span><span class="pl-s">"{{score&gt;=80&amp;&amp;score&lt;90}}"</span><span class="pl-c1">&gt;</span><span class="pl-s1">良好</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-s1">elif</span><span class="pl-c1">=</span><span class="pl-s">"{{score&gt;=60&amp;&amp;score&lt;80}}"</span><span class="pl-c1">&gt;</span><span class="pl-s1">及格</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-smi">if</span><span class="pl-c1">=</span><span class="pl-s">"{{score&gt;=90&amp;&amp;score&lt;=100}}"</span><span class="pl-c1">&gt;</span><span class="pl-s1">优秀</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-smi">elif</span><span class="pl-c1">=</span><span class="pl-s">"{{score&gt;=80&amp;&amp;score&lt;90}}"</span><span class="pl-c1">&gt;</span><span class="pl-s1">良好</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-smi">elif</span><span class="pl-c1">=</span><span class="pl-s">"{{score&gt;=60&amp;&amp;score&lt;80}}"</span><span class="pl-c1">&gt;</span><span class="pl-s1">及格</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
 <span class="pl-c1">&lt;</span><span class="pl-s1">view</span> <span class="pl-s1">wx</span>:<span class="pl-s1">else</span><span class="pl-c1">&gt;</span><span class="pl-s1">不及格</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
 <span class="pl-c"># 3 wx:if 和 hidden的区别</span>
 	<span class="pl-s1">hidden不删除元素</span>
-    <span class="pl-s1">wx</span>:<span class="pl-s1">if</span> <span class="pl-s1">删除元素</span>
+    <span class="pl-s1">wx</span>:<span class="pl-s1">if</span> <span class="pl-smi">删除元素</span>
         
         
 <span class="pl-c">### wxml###</span>
@@ -772,8 +772,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-c">### js###</span>
 <span class="pl-s1">showPhoto</span>:<span class="pl-s1">true</span>
   <span class="pl-en">handleShowPhoto</span>(){
-    <span class="pl-s1">this</span>.<span class="pl-en">setData</span>({
-      <span class="pl-s1">showPhoto</span>:!t<span class="pl-s1">his</span>.<span class="pl-s1">data</span>.<span class="pl-s1">showPhoto</span>
+    <span class="pl-s1">this</span>.<span class="pl-c1">setData</span>({
+      <span class="pl-s1">showPhoto</span>:!t<span class="pl-s1">his</span>.<span class="pl-c1">data</span>.<span class="pl-c1">showPhoto</span>
     })
   },</pre></div>
 <h3>6 发送网络请求</h3>
@@ -793,28 +793,28 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
   <span class="pl-s1">user</span>:{}
   <span class="pl-en">handleLoadUser</span>(){
     <span class="pl-c1">//</span> <span class="pl-s1">发送请求之前</span> <span class="pl-s1">loading效果</span>
-    <span class="pl-s1">wx</span>.<span class="pl-en">showLoading</span>({
+    <span class="pl-s1">wx</span>.<span class="pl-c1">showLoading</span>({
       <span class="pl-s1">title</span>: <span class="pl-s">'加载中~~'</span>,
       <span class="pl-s1">mask</span>:<span class="pl-s1">true</span>  <span class="pl-c1">//</span> <span class="pl-s1">显示透明蒙层</span>，<span class="pl-s1">设置后</span>，<span class="pl-s1">框后的按钮都不能点击了</span>
     })
-    <span class="pl-s1">wx</span>.<span class="pl-en">request</span>({
+    <span class="pl-s1">wx</span>.<span class="pl-c1">request</span>({
       <span class="pl-s1">url</span>: <span class="pl-s">'http://127.0.0.1:8000/index/'</span>,
       <span class="pl-s1">method</span>:<span class="pl-s">'GET'</span>,
       <span class="pl-s1">data</span>:{},
       <span class="pl-s1">header</span>:{},
       <span class="pl-s1">success</span>:(<span class="pl-s1">res</span>)<span class="pl-c1">=</span><span class="pl-c1">&gt;</span>{
           <span class="pl-c1">//</span><span class="pl-s1">请求成功</span>
-          <span class="pl-s1">console</span>.<span class="pl-en">log</span>(<span class="pl-s1">res</span>.<span class="pl-s1">data</span>)
-          <span class="pl-s1">this</span>.<span class="pl-en">setData</span>({
-            <span class="pl-s1">user</span>:<span class="pl-s1">res</span>.<span class="pl-s1">data</span>
+          <span class="pl-s1">console</span>.<span class="pl-c1">log</span>(<span class="pl-s1">res</span>.<span class="pl-c1">data</span>)
+          <span class="pl-s1">this</span>.<span class="pl-c1">setData</span>({
+            <span class="pl-s1">user</span>:<span class="pl-s1">res</span>.<span class="pl-c1">data</span>
           })
       },
       <span class="pl-en">fail</span>:(<span class="pl-s1">error</span>)<span class="pl-c1">=</span><span class="pl-c1">&gt;</span>{
-        <span class="pl-s1">console</span>.<span class="pl-en">log</span>(<span class="pl-s1">error</span>)
+        <span class="pl-s1">console</span>.<span class="pl-c1">log</span>(<span class="pl-s1">error</span>)
       },
       <span class="pl-en">complete</span>:(<span class="pl-s1">res</span>)<span class="pl-c1">=</span><span class="pl-c1">&gt;</span>{
         <span class="pl-c1">//</span> <span class="pl-s1">关闭加载</span>
-        <span class="pl-s1">wx</span>.<span class="pl-en">hideLoading</span>()
+        <span class="pl-s1">wx</span>.<span class="pl-c1">hideLoading</span>()
       }
 
     })
@@ -822,26 +822,26 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
   },
 <span class="pl-c">##wxml###</span>
 <span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">发送网络请求</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-s1">用户名</span>：{{<span class="pl-s1">user</span>.<span class="pl-s1">name</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-s1">爱好</span>：{{<span class="pl-s1">user</span>.<span class="pl-s1">hobby</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-s1">年龄</span>：{{<span class="pl-s1">user</span>.<span class="pl-s1">age</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-s1">用户名</span>：{{<span class="pl-s1">user</span>.<span class="pl-c1">name</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-s1">爱好</span>：{{<span class="pl-s1">user</span>.<span class="pl-c1">hobby</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span><span class="pl-s1">年龄</span>：{{<span class="pl-s1">user</span>.<span class="pl-c1">age</span>}}<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">view</span><span class="pl-c1">&gt;</span>
 <span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"primary"</span> <span class="pl-s1">bindtap</span><span class="pl-c1">=</span><span class="pl-s">"handleLoadUser"</span><span class="pl-c1">&gt;</span><span class="pl-s1">加载用户信息</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
 
 
 <span class="pl-c">## 4 loading提示框</span>
 <span class="pl-c"># 显示</span>
- <span class="pl-s1">wx</span>.<span class="pl-en">showLoading</span>({
+ <span class="pl-s1">wx</span>.<span class="pl-c1">showLoading</span>({
       <span class="pl-s1">title</span>: <span class="pl-s">'加载中，稍后'</span>,
       <span class="pl-s1">mask</span>:<span class="pl-s1">true</span>  <span class="pl-c1">//</span> <span class="pl-s1">显示透明蒙层</span>
     })
     
     
 <span class="pl-c">#关闭--必须手动关闭</span>
- <span class="pl-s1">wx</span>.<span class="pl-en">hideLoading</span>()</pre></div>
+ <span class="pl-s1">wx</span>.<span class="pl-c1">hideLoading</span>()</pre></div>
 <h3>7 消息对话框</h3>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c">###js###</span>
 <span class="pl-en">handleShowTost</span>(){
-    <span class="pl-s1">wx</span>.<span class="pl-en">showToast</span>({
+    <span class="pl-s1">wx</span>.<span class="pl-c1">showToast</span>({
         <span class="pl-s1">title</span>: <span class="pl-s">'恭喜您，秒杀成功~~'</span>,
         <span class="pl-s1">icon</span>:<span class="pl-s">'none'</span>,
         <span class="pl-s1">duration</span>:<span class="pl-c1">2000</span>
@@ -849,49 +849,49 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 }、
 
 <span class="pl-c">### wxml###</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"warn"</span> <span class="pl-s1">plain</span> <span class="pl-s1">bind</span>:<span class="pl-s1">tap</span><span class="pl-c1">=</span><span class="pl-s">"handleShowTost"</span><span class="pl-c1">&gt;</span><span class="pl-s1">点我弹出消息框</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span></pre></div>
+<span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"warn"</span> <span class="pl-s1">plain</span> <span class="pl-s1">bind</span>:<span class="pl-smi">tap</span><span class="pl-c1">=</span><span class="pl-s">"handleShowTost"</span><span class="pl-c1">&gt;</span><span class="pl-s1">点我弹出消息框</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span></pre></div>
 <h3>8 存储</h3>
 <div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-c">#### wxml####</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"default"</span> <span class="pl-s1">plain</span> <span class="pl-s1">bind</span>:<span class="pl-s1">tap</span><span class="pl-c1">=</span><span class="pl-s">"handleSave"</span><span class="pl-c1">&gt;</span><span class="pl-s1">存储数据</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"primary"</span> <span class="pl-s1">plain</span> <span class="pl-s1">bind</span>:<span class="pl-s1">tap</span><span class="pl-c1">=</span><span class="pl-s">"handleGet"</span><span class="pl-c1">&gt;</span><span class="pl-s1">获取数据</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"default"</span> <span class="pl-s1">plain</span> <span class="pl-s1">bind</span>:<span class="pl-s1">tap</span><span class="pl-c1">=</span><span class="pl-s">"handleDelete"</span><span class="pl-c1">&gt;</span><span class="pl-s1">删除数据</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
-<span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"primary"</span> <span class="pl-s1">plain</span> <span class="pl-s1">bind</span>:<span class="pl-s1">tap</span><span class="pl-c1">=</span><span class="pl-s">"handleClear"</span><span class="pl-c1">&gt;</span><span class="pl-s1">清空数据</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"default"</span> <span class="pl-s1">plain</span> <span class="pl-s1">bind</span>:<span class="pl-smi">tap</span><span class="pl-c1">=</span><span class="pl-s">"handleSave"</span><span class="pl-c1">&gt;</span><span class="pl-s1">存储数据</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"primary"</span> <span class="pl-s1">plain</span> <span class="pl-s1">bind</span>:<span class="pl-smi">tap</span><span class="pl-c1">=</span><span class="pl-s">"handleGet"</span><span class="pl-c1">&gt;</span><span class="pl-s1">获取数据</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"default"</span> <span class="pl-s1">plain</span> <span class="pl-s1">bind</span>:<span class="pl-smi">tap</span><span class="pl-c1">=</span><span class="pl-s">"handleDelete"</span><span class="pl-c1">&gt;</span><span class="pl-s1">删除数据</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
+<span class="pl-c1">&lt;</span><span class="pl-s1">button</span> <span class="pl-s1">type</span><span class="pl-c1">=</span><span class="pl-s">"primary"</span> <span class="pl-s1">plain</span> <span class="pl-s1">bind</span>:<span class="pl-smi">tap</span><span class="pl-c1">=</span><span class="pl-s">"handleClear"</span><span class="pl-c1">&gt;</span><span class="pl-s1">清空数据</span><span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-s1">button</span><span class="pl-c1">&gt;</span>
 
 <span class="pl-c">###js###</span>
 <span class="pl-c">###########同步###########</span>
 <span class="pl-c1">//</span> <span class="pl-s1">后期可以使用同步或异步</span><span class="pl-c1">-</span><span class="pl-c1">-</span>》<span class="pl-s1">感官身上差不多</span>，<span class="pl-s1">但是写法不一样</span>
 <span class="pl-c1">//</span> <span class="pl-s1">同步保存</span>
 <span class="pl-en">handleSave</span>() {
-    <span class="pl-s1">wx</span>.<span class="pl-en">setStorageSync</span>(<span class="pl-s">'name'</span>, <span class="pl-s">'justin'</span>)
-    <span class="pl-s1">wx</span>.<span class="pl-en">setStorageSync</span>(<span class="pl-s">'age'</span>, <span class="pl-c1">19</span>)
+    <span class="pl-s1">wx</span>.<span class="pl-c1">setStorageSync</span>(<span class="pl-s">'name'</span>, <span class="pl-s">'justin'</span>)
+    <span class="pl-s1">wx</span>.<span class="pl-c1">setStorageSync</span>(<span class="pl-s">'age'</span>, <span class="pl-c1">19</span>)
     <span class="pl-c1">//</span> <span class="pl-s1">微信小程序</span>，<span class="pl-s1">直接存对象即可</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-c1">-</span>》<span class="pl-s1">最终它被转成json格式字符串存到</span> <span class="pl-s1">本地存储中</span>
-    <span class="pl-s1">wx</span>.<span class="pl-en">setStorageSync</span>(<span class="pl-s">'wife'</span>, {<span class="pl-s1">name</span>:<span class="pl-s">'刘亦菲'</span>,<span class="pl-s1">age</span>:<span class="pl-s">'37'</span>,<span class="pl-s1">hobby</span>:<span class="pl-s">'高尔夫'</span>})
+    <span class="pl-s1">wx</span>.<span class="pl-c1">setStorageSync</span>(<span class="pl-s">'wife'</span>, {<span class="pl-s1">name</span>:<span class="pl-s">'刘亦菲'</span>,<span class="pl-s1">age</span>:<span class="pl-s">'37'</span>,<span class="pl-s1">hobby</span>:<span class="pl-s">'高尔夫'</span>})
 },
 <span class="pl-en">handleGet</span>() {
-    <span class="pl-s1">const</span> <span class="pl-s1">name</span><span class="pl-c1">=</span><span class="pl-s1">wx</span>.<span class="pl-en">getStorageSync</span>(<span class="pl-s">"name"</span>)
-    <span class="pl-s1">const</span> <span class="pl-s1">age</span><span class="pl-c1">=</span><span class="pl-s1">wx</span>.<span class="pl-en">getStorageSync</span>(<span class="pl-s">"age"</span>)
-    <span class="pl-s1">const</span> <span class="pl-s1">wife</span><span class="pl-c1">=</span><span class="pl-s1">wx</span>.<span class="pl-en">getStorageSync</span>(<span class="pl-s">"wife"</span>)
-    <span class="pl-s1">console</span>.<span class="pl-en">log</span>(<span class="pl-s1">name</span>)
-    <span class="pl-s1">console</span>.<span class="pl-en">log</span>(<span class="pl-s1">age</span>)
-    <span class="pl-s1">console</span>.<span class="pl-en">log</span>(<span class="pl-s1">wife</span>)
+    <span class="pl-s1">const</span> <span class="pl-s1">name</span><span class="pl-c1">=</span><span class="pl-s1">wx</span>.<span class="pl-c1">getStorageSync</span>(<span class="pl-s">"name"</span>)
+    <span class="pl-s1">const</span> <span class="pl-s1">age</span><span class="pl-c1">=</span><span class="pl-s1">wx</span>.<span class="pl-c1">getStorageSync</span>(<span class="pl-s">"age"</span>)
+    <span class="pl-s1">const</span> <span class="pl-s1">wife</span><span class="pl-c1">=</span><span class="pl-s1">wx</span>.<span class="pl-c1">getStorageSync</span>(<span class="pl-s">"wife"</span>)
+    <span class="pl-s1">console</span>.<span class="pl-c1">log</span>(<span class="pl-s1">name</span>)
+    <span class="pl-s1">console</span>.<span class="pl-c1">log</span>(<span class="pl-s1">age</span>)
+    <span class="pl-s1">console</span>.<span class="pl-c1">log</span>(<span class="pl-s1">wife</span>)
 
 },
 <span class="pl-en">handleDelete</span>() {
     <span class="pl-c1">//</span> <span class="pl-s1">清除微信缓存</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">删除小程序</span><span class="pl-c1">-</span><span class="pl-c1">-</span><span class="pl-s1">用代码</span>
-    <span class="pl-s1">wx</span>.<span class="pl-en">removeStorageSync</span>(<span class="pl-s">'wife'</span>)
+    <span class="pl-s1">wx</span>.<span class="pl-c1">removeStorageSync</span>(<span class="pl-s">'wife'</span>)
 },
 <span class="pl-en">handleClear</span>() {
-    <span class="pl-s1">wx</span>.<span class="pl-en">clearStorageSync</span>()
+    <span class="pl-s1">wx</span>.<span class="pl-c1">clearStorageSync</span>()
 }
 <span class="pl-c">#######异步###########</span>
 <span class="pl-c1">//</span> <span class="pl-s1">异步保存</span>
 <span class="pl-en">handleSave</span>() {
     <span class="pl-c1">//</span> <span class="pl-s1">如果不需要获取返回值</span><span class="pl-c1">-</span><span class="pl-c1">-</span>》<span class="pl-s1">可以直接写</span>
-    <span class="pl-s1">wx</span>.<span class="pl-en">setStorage</span>({
+    <span class="pl-s1">wx</span>.<span class="pl-c1">setStorage</span>({
         <span class="pl-s1">key</span>:<span class="pl-s">'name'</span>,
         <span class="pl-s1">data</span>:<span class="pl-s">'lqz'</span>
     })
-    <span class="pl-s1">wx</span>.<span class="pl-en">setStorage</span>({
+    <span class="pl-s1">wx</span>.<span class="pl-c1">setStorage</span>({
         <span class="pl-s1">key</span>:<span class="pl-s">'boyfriend'</span>,
         <span class="pl-s1">data</span>:{<span class="pl-s1">name</span>:<span class="pl-s">'彭于晏'</span>,<span class="pl-s1">age</span>:<span class="pl-c1">67</span>}
     })
@@ -900,16 +900,16 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <span class="pl-c1">//</span> <span class="pl-s1">异步获取</span><span class="pl-c1">-</span><span class="pl-c1">-</span>》<span class="pl-s1">函数定义成</span> <span class="pl-s1">async</span>  <span class="pl-s1">内部获取的时候</span>，<span class="pl-s1">前面写</span> <span class="pl-s1">await</span>
 <span class="pl-en">async</span> <span class="pl-s1">handleGet</span>() {
-    <span class="pl-s1">const</span> <span class="pl-s1">boyfriend</span><span class="pl-c1">=</span><span class="pl-k">await</span> <span class="pl-s1">wx</span>.<span class="pl-en">getStorage</span>({<span class="pl-s1">key</span>:<span class="pl-s">'boyfriend'</span>})
-    <span class="pl-s1">console</span>.<span class="pl-en">log</span>(<span class="pl-s1">boyfriend</span>.<span class="pl-s1">data</span>)
+    <span class="pl-s1">const</span> <span class="pl-s1">boyfriend</span><span class="pl-c1">=</span><span class="pl-k">await</span> <span class="pl-s1">wx</span>.<span class="pl-c1">getStorage</span>({<span class="pl-s1">key</span>:<span class="pl-s">'boyfriend'</span>})
+    <span class="pl-s1">console</span>.<span class="pl-c1">log</span>(<span class="pl-s1">boyfriend</span>.<span class="pl-c1">data</span>)
 },
 <span class="pl-en">handleDelete</span>() {
-    <span class="pl-s1">wx</span>.<span class="pl-en">removeStorage</span>({
+    <span class="pl-s1">wx</span>.<span class="pl-c1">removeStorage</span>({
         <span class="pl-s1">key</span>:<span class="pl-s">'name'</span>
     })
 },
 <span class="pl-en">handleClear</span>() {
-    <span class="pl-s1">wx</span>.<span class="pl-en">clearStorage</span>()
+    <span class="pl-s1">wx</span>.<span class="pl-c1">clearStorage</span>()
 }</pre></div>
 <h2>MQTT接入小程序</h2>
 <p><a href="https://www.emqx.com/zh/blog/mqtt-js-tutorial" rel="nofollow">MQTT.js 入门教程 | EMQ (emqx.com)</a></p>
